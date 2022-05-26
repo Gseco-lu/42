@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:38 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/25 19:24:56 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:57:00 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,10 @@ void	signal_handler(int signal)
 		c = ((signal - SIGUSR1) << i++) | c;
 	if (i == 8)
 	{
-		//printf("signal: %c\n", c);
 		write(1, &c, 1);
-		//print_bits(c);
 		c = 0;
 		i = 0;
 	}
-	printf("signal: %i\n", signal);
 }
 
 int	main(void)

@@ -1,21 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_printf_s.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gseco-lu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 19:17:34 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/31 19:26:40 by gseco-lu         ###   ########.fr       */
+/*   Created: 2022/02/08 16:16:40 by gseco-lu          #+#    #+#             */
+/*   Updated: 2022/02/08 18:28:18 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef MINITALK_H
-# define MINITALK_H
+int	ft_printf_s(char *s)
+{
+	int	i;
 
-# include "../ft_printf/ft_printf.h"
-# include <unistd.h>
-# include <signal.h>
-# include <stdlib.h>
-
-#endif
+	i = 0;
+	if (!s)
+		return (ft_printf_s("(null)"));
+	while (s[i])
+		write(1, &s[i++], 1);
+	return (i);
+}	

@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_printf_d.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gseco-lu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 19:17:34 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/31 19:26:40 by gseco-lu         ###   ########.fr       */
+/*   Created: 2022/02/08 15:32:36 by gseco-lu          #+#    #+#             */
+/*   Updated: 2022/02/08 18:45:27 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
+#include "ft_printf.h"
 
-# include "../ft_printf/ft_printf.h"
-# include <unistd.h>
-# include <signal.h>
-# include <stdlib.h>
-
-#endif
+int	ft_printf_d(int nbr)
+{
+	return (ft_putnbr(nbr));
+}

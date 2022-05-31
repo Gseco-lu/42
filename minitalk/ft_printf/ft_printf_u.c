@@ -1,21 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   ft_printf_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gseco-lu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 19:17:34 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/31 19:26:40 by gseco-lu         ###   ########.fr       */
+/*   Created: 2022/02/08 16:03:39 by gseco-lu          #+#    #+#             */
+/*   Updated: 2022/02/08 18:18:31 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+#include "ft_printf.h"
 
-#ifndef MINITALK_H
-# define MINITALK_H
+int	ft_printf_u(unsigned int n)
+{
+	int		size;
 
-# include "../ft_printf/ft_printf.h"
-# include <unistd.h>
-# include <signal.h>
-# include <stdlib.h>
-
-#endif
+	size = 0;
+	if (n < 10)
+		size += ft_printf_c(n + '0');
+	else
+	{
+		size += ft_printf_u(n / 10);
+		size += ft_printf_u(n % 10);
+	}
+	return (size);
+}

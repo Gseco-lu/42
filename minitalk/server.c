@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:38 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/31 19:18:21 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:27:34 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,10 +32,9 @@ void	signal_handler(int signal)
 int	main(void)
 {
 	int		x;
-	int		c;
 
 	x = getpid();
-	printf("%d\n", x);
+	ft_printf("%d\n", x);
 	signal(SIGUSR1, signal_handler);
 	signal(SIGUSR2, signal_handler);
 	while (1)

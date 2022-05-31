@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:31 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/31 19:18:09 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:41:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,15 @@ void	send_bits(unsigned char octet, int pid)
 	signal_handler_sigusr(x, pid);
 }
 
+void	print_strings(char	*argv, int c, int x)
+{
+	while (argv[c])
+	{
+		send_bits(argv[c], x);
+		c++;
+	}
+}
+
 int	main(int argc, char **argv)
 {
 	int		x;
@@ -80,10 +89,10 @@ int	main(int argc, char **argv)
 	char	*s;
 
 	c = 0;
-	s = "invalid arguments!";
+	s = "invalid arguments!\n";
 	if (argc == 1)
 	{
-		printf("%s\n", s);
+		ft_printf("%s", s);
 		return (0);
 	}
 	x = ft_atoi(argv[1]);
@@ -96,10 +105,6 @@ int	main(int argc, char **argv)
 		}
 		return (0);
 	}
-	while (argv[2][c])
-	{
-		send_bits(argv[2][c], x);
-		c++;
-	}
+	print_strings(argv[2], c, x);
 	send_bits('\n', x);
 }

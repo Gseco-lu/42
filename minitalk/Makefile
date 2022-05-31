@@ -1,8 +1,8 @@
 
 all:
 	@cd ft_printf && make all
-	@gcc -Wall -Wextra -Werror src/server.c ft_printf/libftprintf.a -o server
-	@gcc -Wall -Wextra -Werror src/client.c ft_printf/libftprintf.a -o client
+	@gcc -Wall -Wextra -Werror server.c ft_printf/libftprintf.a -o server
+	@gcc -Wall -Wextra -Werror client.c ft_printf/libftprintf.a -o client
 
 clean:
 	@cd ft_printf && make clean

@@ -6,14 +6,11 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:38 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/26 18:14:45 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:18:21 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
+#include "minitalk.h"
 
 void	signal_handler(int signal)
 {
@@ -25,6 +22,8 @@ void	signal_handler(int signal)
 	if (i == 8)
 	{
 		write(1, &c, 1);
+		if (c == '\0')
+			write(1, "\n", 1);
 		c = 0;
 		i = 0;
 	}

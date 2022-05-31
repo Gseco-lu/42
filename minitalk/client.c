@@ -6,14 +6,11 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:31 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/26 18:27:12 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:18:09 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <signal.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include "minitalk.h"
 
 int	ft_atoi(const char *str)
 {
@@ -80,12 +77,29 @@ int	main(int argc, char **argv)
 {
 	int		x;
 	int		c;
+	char	*s;
 
 	c = 0;
+	s = "invalid arguments!";
+	if (argc == 1)
+	{
+		printf("%s\n", s);
+		return (0);
+	}
 	x = ft_atoi(argv[1]);
+	if (argc == 2)
+	{
+		while (s[c])
+		{
+			send_bits(s[c], x);
+			c++;
+		}
+		return (0);
+	}
 	while (argv[2][c])
 	{
 		send_bits(argv[2][c], x);
 		c++;
 	}
+	send_bits('\n', x);
 }

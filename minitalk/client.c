@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:31 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/26 17:54:53 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/26 18:27:12 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	signal_handler_sigusr(int *x, int pid)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(1000);
+		usleep(600);
 		i--;
 	}
 }

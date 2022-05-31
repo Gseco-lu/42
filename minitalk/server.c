@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:38 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/26 17:57:00 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/26 18:14:45 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,6 @@
 #include <unistd.h>
 #include <signal.h>
 #include <stdlib.h>
-
-//void	print_bits(unsigned char octet)
-//{
-//	int	i;
-//
-//	i = 128;
-//	while (octet >= 0 && i)
-//	{
-//		(octet / i) ? write(1, "1", 1) : write(1, "0", 1);
-//		(octet / i) ? octet -= i : 0;
-//		i /= 2;
-//	}
-//}
 
 void	signal_handler(int signal)
 {

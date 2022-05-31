@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:31 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/31 19:41:03 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/05/31 19:50:07 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,11 +98,7 @@ int	main(int argc, char **argv)
 	x = ft_atoi(argv[1]);
 	if (argc == 2)
 	{
-		while (s[c])
-		{
-			send_bits(s[c], x);
-			c++;
-		}
+		ft_printf("%s", s);
 		return (0);
 	}
 	print_strings(argv[2], c, x);

@@ -10,10 +10,10 @@ all:
 
 clean:
 	@cd ft_printf && make clean
-	@rm -f $(NAME1)
-	@rm -f $(NAME2)
 
 fclean: clean
 	@cd ft_printf && make fclean
+	@rm -f $(NAME1)
+	@rm -f $(NAME2)
 
 re: fclean all

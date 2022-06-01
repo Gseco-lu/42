@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 17:44:31 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/05/31 19:50:07 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/06/01 16:01:01 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	x = ft_atoi(argv[1]);
-	if (argc == 2)
+	if (argc == 2 || argc > 3)
 	{
 		ft_printf("%s", s);
 		return (0);

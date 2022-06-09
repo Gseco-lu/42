@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 15:17:00 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/06/08 20:11:11 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:55:43 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <stdlib.h>
-# include "gnl/get_next_line.h"
+//# include "gnl/get_next_line.h"
 # include "mlx.h"
-# include "ft_printf/ft_printf.h"
+//# include "ft_printf/ft_printf.h"
 
 # define X_EVENT_KEY_PRESS			2
 # define X_EVENT_KEY_RELEASE		3
@@ -45,6 +45,7 @@ typedef struct s_game {
 	void		*wall;
 	void		*collect;
 	void		*exit;
+	char		**map;
 }	t_game;
 
 #endif

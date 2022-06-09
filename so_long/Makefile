@@ -11,13 +11,13 @@ FLAGS = -Wall -Werror -Wextra
 
 MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit 
 
-INCLUDES = -I mlx -I gnl -I ft_printf -I .
+INCLUDES = -I mlx -I ##gnl -I ft_printf -I .
 
 MLX = mlx/libmlx.a
 
-GNL = gnl/libgnl.a
+##GNL = gnl/libgnl.a
 
-PRINTF = ft_printf/libftprintf.a
+##PRINTF = ft_printf/libftprintf.a
 
 .c.o:
 	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
@@ -30,10 +30,10 @@ $(NAME): $(OBJS) $(MLX) $(GNL) $(PRINTF)
 $(MLX):
 	make -C mlx
 
-$(GNL):
+##$(GNL):
 	make -C gnl
 
-$(PRINTF):
+##$(PRINTF):
 	make -C ft_printf
 
 clean:

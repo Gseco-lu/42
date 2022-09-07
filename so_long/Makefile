@@ -1,6 +1,14 @@
 NAME = so_long
 
 SRCS =	main.c\
+		conv.c\
+		exit.c\
+		inits.c\
+		moves_update.c\
+		moves.c\
+		updates.c\
+		utils.c\
+		validmap.c
 
 OBJS = $(SRCS:.c=.o)
 
@@ -8,15 +16,15 @@ CC = gcc
 
 FLAGS = -Wall -Werror -Wextra
 
-MLX_FLAGS = -Lmlx -lmlx -framework OpenGL -framework AppKit 
+MLX_FLAGS =  -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
 
-INCLUDES = -I mlx -I ##gnl -I ft_printf -I .
+INCLUDES = -I/usr/include -Imlx_linux -O3 -I gnl -I ft_printf -I .
 
-MLX = mlx/libmlx.a
+MLX = mlx_linux/libmlx.a
 
-##GNL = gnl/libgnl.a
+GNL = gnl/libgnl.a
 
-##PRINTF = ft_printf/libftprintf.a
+PRINTF = ft_printf/libftprintf.a
 
 .c.o:
 	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
@@ -29,10 +37,10 @@ $(NAME): $(OBJS) $(MLX) $(GNL) $(PRINTF)
 $(MLX):
 	make -C mlx
 
-##$(GNL):
+$(GNL):
 	make -C gnl
 
-##$(PRINTF):
+$(PRINTF):
 	make -C ft_printf
 
 clean:

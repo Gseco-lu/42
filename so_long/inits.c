@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   inits.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/07 17:43:19 by gseco-lu          #+#    #+#             */
+/*   Updated: 2022/09/07 17:43:19 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
 void	ft_gameinit(t_window *window)
@@ -22,16 +34,16 @@ void	ft_keysinit(t_window *window)
 void	ft_mapinit(t_window *window)
 {
 	window->wall_img.img = mlx_xpm_file_to_image \
-	(window->mlx, "./images/wall.xpm", &window->wall_img.width, \
+	(window->mlx, "./imgs/wall.xpm", &window->wall_img.width, \
 	&window->wall_img.height);
 	window->floor_img.img = mlx_xpm_file_to_image \
-	(window->mlx, "./images/floor.xpm", &window->floor_img.width, \
+	(window->mlx, "./imgs/floor.xpm", &window->floor_img.width, \
 	&window->floor_img.height);
 	window->collect_img.img = mlx_xpm_file_to_image \
-	(window->mlx, "./images/collect.xpm", &window->collect_img.width, \
+	(window->mlx, "./imgs/collect.xpm", &window->collect_img.width, \
 	&window->collect_img.height);
 	window->exit_img.img = mlx_xpm_file_to_image \
-	(window->mlx, "./images/exit.xpm", &window->exit_img.width, \
+	(window->mlx, "./imgs/exit.xpm", &window->exit_img.width, \
 	&window->exit_img.height);
 }
 

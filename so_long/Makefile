@@ -1,4 +1,3 @@
-
 NAME = so_long
 
 SRCS =	main.c\

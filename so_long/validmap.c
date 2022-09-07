@@ -122,6 +122,8 @@ int	ft_checkmapcomplete(t_window *window, char **mapa)
 			if (mapa[iline][jcol] == 'E')
 				e++;
 			if (mapa[iline][jcol] == 'P')
+				if (p > 1)
+					mapa[iline][jcol] = '0';
 				p++;
 		}
 	}

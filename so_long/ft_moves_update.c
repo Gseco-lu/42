@@ -16,7 +16,7 @@ void	ft_update_left(t_window *window)
 {
 	if (window->keys.a && !window->keys.d && !window->keys.w && !window->keys.s)
 	{
-		window->player_img.img = window->player_2_img.img;
+		window->player_img.img = window->player_img.img;
 		window->player_img.x -= window->player_img.speed;
 		if (window->mapa[(window->player_img.y / 64)] \
 		[(window->player_img.x / 64)] == '1')
@@ -33,7 +33,7 @@ void	ft_update_right(t_window *window)
 {
 	if (window->keys.d && !window->keys.a && !window->keys.w && !window->keys.s)
 	{
-		window->player_img.img = window->player_1_img.img;
+		window->player_img.img = window->player_img.img;
 		window->player_img.x += window->player_img.speed;
 		if (window->mapa[window->player_img.y / 64] \
 		[(window->player_img.x / 64)] == '1')

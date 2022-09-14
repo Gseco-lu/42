@@ -82,6 +82,7 @@ int	ft_validchar(t_window *window, char **mapa)
 	int	j;
 
 	i = -1;
+	j = -1;
 	while (mapa[++i])
 	{
 		j = -1;

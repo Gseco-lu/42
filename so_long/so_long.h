@@ -30,11 +30,11 @@
 # define KEY_RELEASE	3
 # define X_WINBUTTON	17
 
-# define KEY_ESC	53
-# define KEY_W		13
-# define KEY_A		0
-# define KEY_S		1
-# define KEY_D		2
+# define KEY_ESC	65307
+# define KEY_A		97
+# define KEY_S		115
+# define KEY_D		100
+# define KEY_W		119
 
 typedef struct s_keys
 {
@@ -83,7 +83,7 @@ typedef struct s_window
 
 int			ft_map_prep(t_window *window, char **argv);
 char		**ft_mapstr(char **mapa, int fd, int counter);
-int			ft_checkmaprec(t_window *window, char **mapa);
+int			ft_checkmaprec(t_window *window);
 int			ft_checkmapclosed(char **mapa);
 int			ft_checkmapcomplete(t_window *window, char **mapa);
 int			ft_validchar(t_window *window, char **mapa);
@@ -119,7 +119,7 @@ int			checkn(char *buffer);
 typedef unsigned long long int		t_ulli;
 
 int			ft_printf(const char *type, ...);
-int			ft_found_format(const char *format, int i, va_list *args);
+int			ft_type(const char *format, int i, va_list *args);
 int			ft_putchar(char c);
 int			ft_putstr(char *str);
 int			ft_conv_base(t_ulli n, char *base, t_ulli base_size);

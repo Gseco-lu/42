@@ -24,7 +24,7 @@ int	ft_map_prep(t_window *window, char **argv)
 	}
 	window->mapa = ft_mapstr(NULL, fd, 0);
 	close(fd);
-	if (!ft_checkmaprec(window, window->mapa))
+	if (!ft_checkmaprec(window))
 		return (0);
 	if (!ft_checkmapclosed(window->mapa))
 	{
@@ -56,16 +56,16 @@ char	**ft_mapstr(char **mapa, int fd, int counter)
 	return (mapa);
 }
 
-int	ft_checkmaprec(t_window *window, char **mapa)
+int	ft_checkmaprec(t_window *window)
 {
-	int	iline;
-	int	jcol;
+	int			iline;
+	int			jcol;
 
 	iline = -1;
 	jcol = 0;
-	while (mapa[++iline] && mapa[iline][jcol] != '\n')
+	while (window->mapa[++iline] && window->mapa[iline][jcol] != '\n')
 	{
-		if (strlen(mapa[0]) != strlen(mapa[iline]))
+		if (strlen(window->mapa[0]) != strlen(window->mapa[iline]))
 		{
 			ft_printf("Map is not rectangular.");
 			return (0);
@@ -122,12 +122,14 @@ int	ft_checkmapcomplete(t_window *window, char **mapa)
 			if (mapa[iline][jcol] == 'E')
 				e++;
 			if (mapa[iline][jcol] == 'P')
+			{
 				if (p > 1)
 					mapa[iline][jcol] = '0';
 				p++;
+			}
 		}
 	}
-	if (window->collect_img.n < 1 || e < 1 || p != 1)
+	if (window->collect_img.n < 1 || e < 1 || p < 1)
 		return (0);
 	return (1);
 }

@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/14 17:01:55 by gseco-lu          #+#    #+#             */
+/*   Updated: 2022/09/14 17:01:55 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-int	ft_found_format(const char *format, int i, va_list *args)
+int	ft_type(const char *format, int i, va_list *args)
 {
 	if (format[i] == 'c')
 		return (ft_putchar(va_arg(*args, int)));
@@ -37,7 +49,7 @@ int	ft_printf(const char *format, ...)
 	while (format[i])
 	{
 		if (format[i] == '%')
-			ret += ft_found_format(format, ++i, &args);
+			ret += ft_type(format, ++i, &args);
 		else
 			ret += ft_putchar(format[i]);
 		i++;

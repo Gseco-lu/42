@@ -1,54 +1,32 @@
 NAME = so_long
 
-SRCS =	main.c\
-		conv.c\
-		exit.c\
-		inits.c\
-		moves_update.c\
-		moves.c\
-		updates.c\
-		utils.c\
-		validmap.c
+SRCS = main.c ft_validmap.c ft_inits.c ft_updates.c ft_moves.c ft_exit.c ft_gnl.c \
+		ft_gnl_utils.c ft_conv.c ft_printf.c ft_utils.c ft_moves_update.c
+
+MLX_LIB_DIR = mlx_linux/
+MLX_INCLUDE = -Imlx_linux
+MLX_FLAGS = -L$(MLX_LIB_DIR) -lmlx_Linux -L/usr/lib -lXext -lX11 -lm -lz
 
 OBJS = $(SRCS:.c=.o)
 
 CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
-FLAGS = -Wall -Werror -Wextra
+all: $(NAME) 
 
-MLX_FLAGS =  -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz
+$(NAME): $(OBJS)
+		@$(CC) $(^) $(MLX_FLAGS) -o $(@)
 
-INCLUDES = -I/usr/include -Imlx_linux -O3 -I gnl -I ft_printf -I .
+%.o: %.c
+	@$(CC) $(MLX_INCLUDE) -c $(^) -o $(@)
+##-g -fsanitize=address 
 
-MLX = mlx_linux/libmlx.a
 
-GNL = gnl/libgnl.a
-
-PRINTF = ft_printf/libftprintf.a
-
-.c.o:
-	$(CC) $(FLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
-
-all: $(NAME)
-
-$(NAME): $(OBJS) $(MLX) $(GNL) $(PRINTF)
-	$(CC) $(FLAGS) $(INCLUDES) $(MLX_FLAGS) $(OBJS) -o $(NAME)
-
-$(MLX):
-	make -C mlx
-
-$(GNL):
-	make -C gnl
-
-$(PRINTF):
-	make -C ft_printf
 
 clean:
-	@rm -f $(OBJS)
+	rm -rf $(OBJS)
 
-fclean:	clean 
-	@rm -f $(NAME) $(MLX) $(GNL) $(PRINTF)
+fclean:	clean
+	rm -rf $(NAME)
 
-re:	fclean all
-
-.PHONY: all clean fclean re
+re: fclean all

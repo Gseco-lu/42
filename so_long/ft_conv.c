@@ -22,3 +22,13 @@ int	ft_conv_base(unsigned long long n, char *base, unsigned long long base_size)
 	count += ft_putchar(base[n % base_size]);
 	return (count);
 }
+
+int	ft_strlen(const char *s)
+{
+	int	number_chars;
+
+	number_chars = 0;
+	while (s[number_chars] != 0)
+		number_chars++;
+	return (number_chars);
+}

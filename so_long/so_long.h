@@ -83,7 +83,7 @@ typedef struct s_window
 
 int			ft_map_prep(t_window *window, char **argv);
 char		**ft_mapstr(char **mapa, int fd, int counter);
-int			ft_checkmaprec(t_window *window);
+int			ft_checkmaprec(t_window *window, char **mapa);
 int			ft_checkmapclosed(char **mapa);
 int			ft_checkmapcomplete(t_window *window, char **mapa);
 int			ft_validchar(t_window *window, char **mapa);
@@ -101,7 +101,6 @@ int			ft_stopwalking(int key, t_window *window);
 int			ft_move(t_window *window);
 void		ft_end(t_window *window);
 void		ft_movecount(t_window *window);
-void		ft_trapinit(t_window *window, char **mapa);
 
 void		ft_wichside(t_window *window);
 void		ft_update_right(t_window *window);

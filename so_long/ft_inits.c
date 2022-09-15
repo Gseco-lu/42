@@ -15,6 +15,7 @@
 void	ft_gameinit(t_window *window)
 {
 	window->mlx = mlx_init();
+	printf("width: %i\n", window->y_winparam);
 	window->win = mlx_new_window(window->mlx, window->y_winparam, \
 	window->x_winparam, "so_long");
 	ft_keysinit(window);
@@ -67,7 +68,7 @@ void	ft_playerinit(t_window *window, char **mapa)
 	}
 	window->player_img.speed = 64;
 	window->player_img.img = mlx_xpm_file_to_image(window->mlx, \
-	"./images/player.xpm", &window->player_img.width, \
+	"./imgs/player.xpm", &window->player_img.width, \
 	&window->player_img.height);
 	mlx_put_image_to_window(window->mlx, window->win, \
 	window->player_img.img, window->player_img.x, window->player_img.y);

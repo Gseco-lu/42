@@ -24,7 +24,6 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 	{
-		ft_printf("Map is missing.");
 		exit(0);
 	}
 	window = (t_window *)malloc(sizeof(t_window));

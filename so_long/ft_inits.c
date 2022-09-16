@@ -15,7 +15,6 @@
 void	ft_gameinit(t_window *window)
 {
 	window->mlx = mlx_init();
-	printf("width: %i\n", window->y_winparam);
 	window->win = mlx_new_window(window->mlx, window->y_winparam, \
 	window->x_winparam, "so_long");
 	ft_keysinit(window);

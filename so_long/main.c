@@ -15,7 +15,7 @@
 int	ft_xbutton(t_window *window)
 {
 	mlx_destroy_window(window->mlx, window->win);
-	exit(0);
+	ft_end(window);
 }
 
 int	main(int argc, char **argv)

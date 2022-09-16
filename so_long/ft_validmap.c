@@ -56,7 +56,6 @@ char	**ft_mapstr(char **mapa, int fd, int counter)
 	return (mapa);
 }
 
-
 int	ft_checkmaprec(t_window *window, char **mapa)
 {
 	int	iline;
@@ -68,12 +67,13 @@ int	ft_checkmaprec(t_window *window, char **mapa)
 	{
 		if (ft_strlen(mapa[0]) != ft_strlen(mapa[iline]))
 		{
-			if(!(mapa[iline + 1]) && (ft_strlen(mapa[0]) != ft_strlen(mapa[iline]) - 1))
+			if (!(mapa[iline + 1]) && \
+			(ft_strlen(mapa[0]) == ft_strlen(mapa[iline]) + 1))
 				return (1);
 			ft_printf("Map is not rectangular.\n");
 			return (0);
 		}
-		iline +=1; 
+		iline += 1;
 	}
 	return (1);
 }
@@ -90,22 +90,13 @@ int	ft_checkmapclosed(char **mapa)
 		while (mapa[iline][++jcol])
 		{
 			if (mapa[0][jcol] != '1' && mapa[0][jcol] != '\n')
-			{
-				//ft_printf("%c\n", mapa[0][jcol]);
 				return (0);
-			}
 			if (mapa[iline][0] != '1')
-			{
-				//ft_printf("M.\n");
 				return (0);
-			}
-			//ft_printf("%c\n", mapa[0][jcol]);
 		}
-		//ft_printf("Map i.\n");
 		if (mapa[iline][jcol - 2] != '1')
 			return (0);
 	}
-	//ft_printf("Map is noular.\n");
 	jcol = jcol - 1;
 	while (mapa[iline - 1][--jcol] && jcol - 1 != 0)
 		if (mapa[iline - 1][jcol] != '1')
@@ -133,12 +124,8 @@ int	ft_checkmapcomplete(t_window *window, char **mapa)
 				window->collect_img.n++;
 			if (mapa[iline][jcol] == 'E')
 				e++;
-			if (mapa[iline][jcol] == 'P')
-			{
-				if (p > 1)
-					mapa[iline][jcol] = '0';
-				p++;
-			}
+			if (mapa[iline][jcol] == 'P' && (++p > 1))
+				mapa[iline][jcol] = '0';
 		}
 	}
 	if (window->collect_img.n < 1 || e < 1 || p < 1)

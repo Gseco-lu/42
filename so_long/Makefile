@@ -20,9 +20,6 @@ $(NAME): $(OBJS)
 %.o: %.c
 	@$(CC) $(MLX_INCLUDE) -c $(^) -o $(@)
 ##-g -fsanitize=address 
-
-
-
 clean:
 	rm -rf $(OBJS)
 

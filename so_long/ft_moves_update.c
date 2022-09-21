@@ -24,9 +24,11 @@ void	ft_update_left(t_window *window)
 			window->player_img.x += window->player_img.speed;
 			window->mvcount -= 1;
 		}
+		else
+			ft_printf("Steps: %i\n", window->mvcount);
 		window->keys.a = 0;
 		window->mvcount += 1;
-		ft_printf("Steps: %i\n", window->mvcount);
+		//ft_printf("Steps: %i\n", window->mvcount);
 	}
 }
 
@@ -42,9 +44,11 @@ void	ft_update_right(t_window *window)
 			window->player_img.x -= window->player_img.speed;
 			window->mvcount -= 1;
 		}
+		else
+			ft_printf("Steps: %i\n", window->mvcount);
 		window->keys.d = 0;
 		window->mvcount += 1;
-		ft_printf("Steps: %i\n", window->mvcount);
+		//ft_printf("Steps: %i\n", window->mvcount);
 	}
 }
 
@@ -59,9 +63,11 @@ void	ft_update_up(t_window *window)
 			window->player_img.y += window->player_img.speed;
 			window->mvcount -= 1;
 		}
+		else
+			ft_printf("Steps: %i\n", window->mvcount);
 		window->keys.w = 0;
 		window->mvcount += 1;
-		ft_printf("Steps: %i\n", window->mvcount);
+		//ft_printf("Steps: %i\n", window->mvcount);
 	}
 }
 
@@ -76,9 +82,11 @@ void	ft_update_down(t_window *window)
 			window->player_img.y -= window->player_img.speed;
 			window->mvcount -= 1;
 		}
+		else
+			ft_printf("Steps: %i\n", window->mvcount);
 		window->keys.s = 0;
 		window->mvcount += 1;
-		ft_printf("Steps: %i\n", window->mvcount);
+		//ft_printf("Steps: %i\n", window->mvcount);
 	}
 }
 

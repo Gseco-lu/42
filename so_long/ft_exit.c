@@ -37,3 +37,18 @@ void	ft_end(t_window *window)
 	free(window);
 	exit(0);
 }
+
+void	free_mapa(char **mapa2)
+{
+	int	iline;
+	int	jcol;
+
+	iline = -1;
+	while (mapa2[++iline])
+	{
+		jcol = -1;
+		while (mapa2[iline][++jcol])
+		{
+			free(mapa2[iline][jcol]);
+		}
+}

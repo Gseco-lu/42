@@ -101,7 +101,7 @@ int	ft_validchar(t_window *window, char **mapa)
 			}
 		}
 	}
-	window->x_winparam = i * 64;
-	window->y_winparam = j * 64;
+	window->x = i * 64;
+	window->y = j * 64;
 	return (1);
 }

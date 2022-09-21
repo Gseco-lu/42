@@ -70,8 +70,8 @@ typedef struct s_window
 	int			count;
 	int			mvcount;
 	char		**mapa;
-	int			x_winparam;
-	int			y_winparam;
+	int			x;
+	int			y;
 
 	t_images	collect_img;
 	t_images	wall_img;

@@ -15,8 +15,8 @@
 void	ft_gameinit(t_window *window)
 {
 	window->mlx = mlx_init();
-	window->win = mlx_new_window(window->mlx, window->y_winparam, \
-	window->x_winparam, "so_long");
+	window->win = mlx_new_window(window->mlx, window->y, \
+	window->x, "so_long");
 	ft_keysinit(window);
 	ft_mapinit(window);
 	ft_playerinit(window, window->mapa);

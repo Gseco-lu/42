@@ -34,6 +34,7 @@ void	ft_end(t_window *window)
 	if (window->exit_img.img)
 		mlx_destroy_image(window->mlx, window->exit_img.img);
 	mlx_destroy_window(window->mlx, window->win);
+	mlx_destroy_display(window);
 	free(window);
 	exit(0);
 }
@@ -46,9 +47,7 @@ void	free_mapa(char **mapa2)
 	iline = -1;
 	while (mapa2[++iline])
 	{
-		jcol = -1;
-		while (mapa2[iline][++jcol])
-		{
-			free(mapa2[iline][jcol]);
-		}
+		free(mapa2[iline]);
+	}
+	free(mapa2);
 }

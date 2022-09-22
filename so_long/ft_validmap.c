@@ -24,6 +24,12 @@ int	ft_map_prep(t_window *window, char **argv)
 	}
 	window->mapa = ft_mapstr(NULL, fd, 0);
 	close(fd);
+	if (window->mapa == NULL)
+	{
+		ft_printf("empty map\n");
+		return (0);
+	}
+	if (window->mapa)
 	if (!ft_checkmaprec(window, window->mapa))
 		return (0);
 	if (!ft_checkmapclosed(window->mapa))
@@ -51,7 +57,7 @@ char	**ft_mapstr(char **mapa, int fd, int counter)
 	if (!mapa && counter != 0)
 		mapa = malloc((counter + 1) * (sizeof(char *)));
 	if (!mapa)
-		ft_end(NULL);
+		return (NULL);
 	mapa[counter] = str;
 	return (mapa);
 }

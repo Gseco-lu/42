@@ -101,8 +101,14 @@ int			ft_stopwalking(int key, t_window *window);
 int			ft_move(t_window *window);
 void		ft_end(t_window *window);
 void		ft_movecount(t_window *window);
-
+int			validation(t_window *window, char **mapa2);
+int			copy_map(t_window *window, char **mapa);
+int			find_player(t_window *window, char **mapa);
+void		check_path(t_window *window, int x, int y, char **mapa2);
+int			check_position(t_window *window, int x, int y, char **mapa2);
+int			check_map_name(char *map);
 void		ft_wichside(t_window *window);
+void		free_mapa(char **mapa2);
 void		ft_update_right(t_window *window);
 void		ft_update_left(t_window *window);
 void		ft_update_up(t_window *window);
@@ -125,5 +131,6 @@ int			ft_conv_base(t_ulli n, char *base, t_ulli base_size);
 int			ft_putnumber(int n);
 int			ft_putui(unsigned int n, char *base, int base_size);
 int			ft_putul(unsigned long n);
+void		free_images(t_window *window);
 
 #endif

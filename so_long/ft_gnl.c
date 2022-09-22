@@ -31,8 +31,6 @@ char	*get_next_line(int fd)
 		size += searchn(buff[fd]);
 		if (i > 0)
 			line = get_line(line, buff[fd], size);
-		if (line == NULL || line[0] != '1')
-			ft_printf("Map Error!\n");
 		if (!checkn(buff[fd]) || i <= 0)
 			break ;
 	}

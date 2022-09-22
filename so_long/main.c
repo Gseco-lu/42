@@ -25,12 +25,15 @@ int	main(int argc, char **argv)
 	if (argc != 2 || !check_map_name(argv[1]))
 		exit(0);
 	window = (t_window *)malloc(sizeof(t_window));
-	window->mvcount = 0;
+	window->mvcount = 1;
 	window->collect_img.count = 0;
 	if (!ft_map_prep(window, argv))
 		exit(0);
-	if (!found_player(window, window->mapa))
+	if (copy_map(window, window->mapa) == 0)
+	{
+		ft_printf("Invalid path\n");
 		exit(0);
+	}
 	ft_gameinit(window);
 	mlx_hook(window->win, X_WINBUTTON, 1L << 3, &ft_xbutton, window);
 	mlx_hook(window->win, KEY_PRESS, 1, ft_startwalking, window);
@@ -38,19 +41,4 @@ int	main(int argc, char **argv)
 	mlx_loop_hook(window->mlx, ft_work, window);
 	mlx_loop(window->mlx);
 	ft_end(window);
-}
-
-void	ft_putlst_fd(char **lst, int fd)
-{
-	int	i;
-
-	if (!lst)
-		return ;
-	i = 0;
-	while (lst[i])
-	{
-		ft_putstr_fd(lst[i], fd);
-		ft_putchar_fd('\n', fd);
-		i++;
-	}
 }

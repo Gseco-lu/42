@@ -6,11 +6,13 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 19:28:14 by gseco-lu          #+#    #+#             */
-/*   Updated: 2022/09/21 19:29:52 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2022/09/22 19:00:09 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	check_map_name(char *map)
+#include "so_long.h"
+
+int	check_map_name(char *map)
 {
 	int	fd;
 	int	len;
@@ -19,13 +21,25 @@ void	check_map_name(char *map)
 	fd = open(map, O_DIRECTORY);
 	if (fd >= 0 && (len < 4 || map[len - 4] != '.' || map[len - 3] != 'b'
 			|| map[len - 2] != 'e' || map[len - 1] != 'r'))
-		ft_printf("error .ber \n");
+			{
+				ft_printf("error map\n");
+				close (fd);
+				return (0);
+			}
 	fd = open(map, O_RDONLY);
 	if (fd < 0 && (len < 4 || map[len - 4] != '.' || map[len - 3] != 'b'
 			|| map[len - 2] != 'e' || map[len - 1] != 'r'))
-		ft_printf("error .ber \n");
+			{
+				ft_printf("error map\n");
+				close (fd);
+				return (0);
+			}
 	if (len < 4 || map[len - 4] != '.' || map[len - 3] != 'b'
 		|| map[len - 2] != 'e' || map[len - 1] != 'r')
-		ft_printf("error .ber \n");
-	close (fd);
+		{
+				ft_printf("error map\n");
+				close (fd);
+				return (0);
+		}
+	return (1);
 }

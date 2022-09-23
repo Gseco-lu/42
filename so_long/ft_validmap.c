@@ -18,30 +18,18 @@ int	ft_map_prep(t_window *window, char **argv)
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd <= 0)
-	{
-		ft_printf("File oppening failed.\n");
 		return (0);
-	}
 	window->mapa = ft_mapstr(NULL, fd, 0);
 	close(fd);
 	if (window->mapa == NULL)
-	{
-		ft_printf("empty map\n");
 		return (0);
-	}
 	if (window->mapa)
-	if (!ft_checkmaprec(window, window->mapa))
-		return (0);
+		if (!ft_checkmaprec(window, window->mapa))
+			return (0);
 	if (!ft_checkmapclosed(window->mapa))
-	{
-		ft_printf("Map is not closed.\n");
 		return (0);
-	}
 	if (!ft_checkmapcomplete(window, window->mapa))
-	{
-		ft_printf("Map do not have the requirements to start.\n");
 		return (0);
-	}
 	if (!ft_validchar(window, window->mapa))
 		return (0);
 	return (1);
@@ -134,7 +122,7 @@ int	ft_checkmapcomplete(t_window *window, char **mapa)
 				mapa[iline][jcol] = '0';
 		}
 	}
-	if (window->collect_img.n < 1 || e < 1 || p < 1)
+	if (window->collect_img.n < 1 || e != 1 || p != 1)
 		return (0);
 	return (1);
 }

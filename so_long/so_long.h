@@ -132,5 +132,7 @@ int			ft_putnumber(int n);
 int			ft_putui(unsigned int n, char *base, int base_size);
 int			ft_putul(unsigned long n);
 void		free_images(t_window *window);
+int			check_map_name_utils(char *map);
+int			copy_map_utils(t_window *window, char **mapa2);
 
 #endif

@@ -34,8 +34,8 @@ void	ft_end(t_window *window)
 	if (window->exit_img.img)
 		mlx_destroy_image(window->mlx, window->exit_img.img);
 	mlx_destroy_window(window->mlx, window->win);
-	mlx_destroy_display(window);
-	free(window);
+	mlx_destroy_display(window->mlx);
+	free(window->mlx);
 	exit(0);
 }
 

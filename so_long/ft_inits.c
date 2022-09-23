@@ -45,6 +45,9 @@ void	ft_mapinit(t_window *window)
 	window->exit_img.img = mlx_xpm_file_to_image \
 	(window->mlx, "./imgs/exit.xpm", &window->exit_img.width, \
 	&window->exit_img.height);
+	window->player_img.img = mlx_xpm_file_to_image \
+	(window->mlx, "./imgs/player.xpm", &window->player_img.width, \
+	&window->player_img.height);
 }
 
 void	ft_playerinit(t_window *window, char **mapa)
@@ -66,9 +69,6 @@ void	ft_playerinit(t_window *window, char **mapa)
 		}
 	}
 	window->player_img.speed = 64;
-	window->player_img.img = mlx_xpm_file_to_image(window->mlx, \
-	"./imgs/player.xpm", &window->player_img.width, \
-	&window->player_img.height);
 	mlx_put_image_to_window(window->mlx, window->win, \
 	window->player_img.img, window->player_img.x, window->player_img.y);
 }

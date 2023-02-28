@@ -1,9 +1,9 @@
 NAME = philo
 
-SRCS =	main.c\
+SRCS =	philo.c\
 		simulation.c\
 		actions.c\
-		utils.c\
+		philo_utils.c\
 		death.c
 
 OBJS = $(SRCS:.c=.o)

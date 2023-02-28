@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   actions.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/28 19:26:16 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/02/28 19:26:16 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 int	ft_pickforks(t_philo *philo)
@@ -44,7 +56,7 @@ int	ft_eat(t_philo *philo)
 	while (((t.tv_sec * 1000) + (t.tv_usec / 1000)) - aux
 		< (unsigned long)meal_dur)
 		gettimeofday(&t, NULL);
-    ft_unlockforks(philo);
+	ft_unlockforks(philo);
 	return (0);
 }
 

@@ -3,8 +3,13 @@ NAME = philo
 SRCS =	main.c\
 		simulation.c\
 		actions.c\
-		utils.c\
-		death.c
+		philo_utils.c\
+		death.c\
+		mutexes.c\
+		philo.c\
+		threads.c\
+		write_func.c
+
 
 OBJS = $(SRCS:.c=.o)
 
@@ -15,15 +20,14 @@ INCLUDES = -I .
 
 LINKERS = -pthread
 
-FLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+FLAGS = -Wall -Wextra -Werror 
+# -fsanitize=address -g
 
 
 GREEN		=	\033[0;32m
 YELLOW	=	\033[0;33m
 RED		=	\033[0;31m
-BLUE_PISK		=	\033[0;34;5;199m
 BLUE		=	\033[0;36m
-VIOLET	=	\033[0;38;5;199m
 RESET		=	\033[0m
 
 .c.o:

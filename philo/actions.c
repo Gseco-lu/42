@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   actions.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/03/02 15:25:47 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/03/02 15:25:47 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 static void	lock_forks(int *left, int *right, t_data *data, t_philo *philo)
@@ -57,8 +69,10 @@ void	*routine(void *p)
 
 	philo = (t_philo *)p;
 	data = philo->data;
-	if (philo->id % 2 != 0)
-		ft_usleep(10);
+	//if (philo->id % 2 != 0)
+	//	ft_usleep(5000);
+	if (philo->id % 2 == 0)
+		ft_usleep(5500);
 	while (check_death(data))
 	{
 		eat(data, philo);

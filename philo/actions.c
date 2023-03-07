@@ -76,7 +76,7 @@ void	*routine(void *p)
 	while (check_death(data))
 	{
 		eat(data, philo);
-		ft_usleep(5);
+		//ft_usleep(5);
 		if (philo->ate_all)
 			break ;
 		write_logs(philo->id, SLEEPING, data);

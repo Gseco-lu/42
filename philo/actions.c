@@ -69,13 +69,14 @@ void	*routine(void *p)
 
 	philo = (t_philo *)p;
 	data = philo->data;
-	//if (philo->id % 2 != 0)
-	//	ft_usleep(5000);
-	if (philo->id % 2 == 0)
-		ft_usleep(5500);
+	if (philo->id % 2 != 0)
+		usleep(5000);
+	//if (philo->id % 2 == 0)
+	//	ft_usleep(500);
 	while (check_death(data))
 	{
 		eat(data, philo);
+		ft_usleep(5);
 		if (philo->ate_all)
 			break ;
 		write_logs(philo->id, SLEEPING, data);

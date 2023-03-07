@@ -1,7 +1,6 @@
 NAME = philo
 
 SRCS =	main.c\
-		simulation.c\
 		actions.c\
 		philo_utils.c\
 		death.c\
@@ -20,8 +19,7 @@ INCLUDES = -I .
 
 LINKERS = -pthread
 
-FLAGS = -Wall -Wextra -Werror 
-# -fsanitize=address -g
+FLAGS = -Wall -Wextra -Werror -fsanitize=address -g
 
 
 GREEN		=	\033[0;32m

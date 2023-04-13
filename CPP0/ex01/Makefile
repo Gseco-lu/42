@@ -1,6 +1,6 @@
 NAME	= phonebook
 
-SRCS	=	Phonebook.cpp	\
+SRCS	=	phonebook.cpp	\
 			Contact.cpp		\
 			main.cpp
 

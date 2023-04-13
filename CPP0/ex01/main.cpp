@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 15:16:26 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/04/13 15:16:26 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
-#include "Phonebook.hpp"
-#include "Contact.hpp"
+#include "phonebook.hpp"
+#include "contact.hpp"
 
 int main(int ac, char **av)
 {

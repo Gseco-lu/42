@@ -1,28 +1,25 @@
-NAME	=	account
 
-SRCS	=	tests.cpp \
-			Account.cpp
+NAME = accounts
 
-OBJS	= $(SRCS:.cpp=.o)
+CC = c++
 
-CP		= c++
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
-PFLAGS	= -std=c++98 -I. -g -Wall -Werror -Werror
+SRC = Account.cpp\
+		tests.cpp 
+		
 
-all:	$(NAME)
+all: $(NAME)
 
-%.o: %.cpp
-	@$(CP) $(PFLAGS) -c $< -o $@
+$(NAME): $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
-$(NAME):	$(OBJS)
-		@$(CP) $(PFLAGS) $(OBJS) -o $(NAME)
+fclean:
+	rm -rf $(NAME)
 
-clean:	
-		@rm -f $(OBJS)
-
-fclean:	clean
-		@rm -f $(NAME)
+m:
+	rm -rf $(NAME)
+r:
+	make re && clear &&./$(NAME)
 
 re: fclean all
-
-.PHONY: all re clean fclean

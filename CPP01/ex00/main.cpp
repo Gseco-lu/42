@@ -18,8 +18,8 @@ Zombie* newZombie( std::string name );
 
 int main (void)
 {
-	Zombie *nozob = newZombie("Nozob");
-	nozob->announce();
-	randomChump("Nozobese");
-	delete nozob;
+	Zombie *zombiee = newZombie("zombiee");
+	zombiee->announce();
+	randomChump("nzombiee");
+	delete zombiee;
 }

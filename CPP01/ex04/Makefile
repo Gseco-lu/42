@@ -12,12 +12,10 @@ all: $(NAME)
 $(NAME): $(SRC)
 	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
-fclean:
-	rm -rf $(NAME)
+clean:
+		rm -rf $(OBJS)
 
-m:
-	rm -rf $(NAME)
-r:
-	make re && clear &&./$(NAME)
+fclean:
+		rm -rf $(NAME)
 
 re: fclean all

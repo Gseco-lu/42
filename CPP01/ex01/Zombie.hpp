@@ -26,6 +26,7 @@ public:
 	~Zombie();
 
 	void announce( void );
+	void setName(std::string name);
 };
 
 #endif

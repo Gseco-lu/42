@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:14:11 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/05/04 20:30:49 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:42:41 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -138,7 +138,7 @@ Fixed Fixed::operator--(int)
 	return temp;
 }
 
-Fixed& Fixed::min(Fixed& a, Fixed&b)
+Fixed& Fixed::min(Fixed &a, Fixed &b)
 {
 	if (a < b)
 		return a;
@@ -146,7 +146,7 @@ Fixed& Fixed::min(Fixed& a, Fixed&b)
 		return b;
 }
 
-const Fixed& Fixed::min(const Fixed& a, const Fixed&b)
+const Fixed& Fixed::min(const Fixed &a, const Fixed &b)
 {
 	if ((Fixed &)a < (Fixed &)b)
 		return a;
@@ -154,7 +154,7 @@ const Fixed& Fixed::min(const Fixed& a, const Fixed&b)
 		return b;
 }
 
-Fixed& Fixed::max(Fixed& a, Fixed&b)
+Fixed& Fixed::max(Fixed &a, Fixed &b)
 {
 	if (a > b)
 		return a;
@@ -162,7 +162,7 @@ Fixed& Fixed::max(Fixed& a, Fixed&b)
 		return b;
 }
 
-const Fixed& Fixed::max(const Fixed& a, const Fixed&b)
+const Fixed& Fixed::max(const Fixed &a, const Fixed &b)
 {
 	if ((Fixed &)a > (Fixed &)b)
 		return a;

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:14:11 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/05/04 20:42:41 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:47:01 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ bool Fixed::operator!=(const Fixed &fixed)
 Fixed Fixed::operator+(const Fixed &fixed)
 {
 	if (((getRawBits() + fixed.getRawBits()) > (INT_MAX >> bits)) || ((getRawBits() + fixed.getRawBits()) < (INT_MIN >> bits))) {
-		std::cout << "Sum value is out of limits" << std::endl;
+		std::cout << "Out of limits" << std::endl;
 		return *this;
 	}
 	Fixed temp;
@@ -86,7 +86,7 @@ Fixed Fixed::operator+(const Fixed &fixed)
 Fixed Fixed::operator-(const Fixed &fixed)
 {
 	if ((getRawBits() - fixed.getRawBits() > (INT_MAX >> bits)) || ((getRawBits() - fixed.getRawBits()) < (INT_MIN >> bits))) {
-		std::cout << "Subtraction value is out of limits" << std::endl;
+		std::cout << "Out of limits" << std::endl;
 		return *this;
 	}
 	Fixed temp;

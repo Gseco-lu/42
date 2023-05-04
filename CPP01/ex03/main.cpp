@@ -21,7 +21,7 @@ int main()
 		Weapon pistol = Weapon("Glock");
 		HumanA mike("Mike", pistol);
 		mike.attack();
-		pistol.setType("Deset Eagle");
+		pistol.setType("Desert Eagle");
 		mike.attack();
 	}
 	{

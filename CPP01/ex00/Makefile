@@ -5,9 +5,9 @@ CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
 
 SRC = Zombie.cpp\
-		newZombie.cpp\
+		NewZombie.cpp\
 		main.cpp\
-		randomChump.cpp
+		RandomChump.cpp
 		
 
 all: $(NAME)

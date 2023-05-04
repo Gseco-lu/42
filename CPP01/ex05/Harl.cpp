@@ -46,6 +46,6 @@ void Harl::complain( std::string level )
 
 	for (int i = 0; i < 4; i++)
 		if (level == str[i])
-			(this->*funcptr[i])();
+			(this->*funcptr[i]);
 	
 }

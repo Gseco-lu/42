@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:44:30 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/05/16 17:47:28 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/06/07 16:18:44 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool vert_on_edge(Point const a, Point const b, Point const c, Point point)
 		return true ;
 	return false ;
 }
-const float abs(float f)
+float abs(float f)
 {
 	if (f < 0)
 		f = -f;
@@ -37,7 +37,7 @@ const float abs(float f)
 }
 
 // area expression = abs((xB*yA-xA*yB)+(xC*yB-xB*yC)+(xA*yC-xC*yA))/2.
-const float tri_area(Point const a, Point const b, Point const c)
+float tri_area(Point const a, Point const b, Point const c)
 {
 	return abs((b.getX().toFloat() * a.getY().toFloat() - a.getX().toFloat() * b.getY().toFloat()) + \
 	(c.getX().toFloat() * b.getY().toFloat() - b.getX().toFloat() * c.getY().toFloat()) + \
@@ -47,7 +47,7 @@ const float tri_area(Point const a, Point const b, Point const c)
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
 	if (vert_on_edge(a, b, c, point))
-		return false ;
+		return false;
 	const float triArea = tri_area(a,b,c);
 	const float t1 = tri_area(point, a, b);
 	const float t2 = tri_area(point,b, c);

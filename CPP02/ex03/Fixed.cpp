@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/07 16:12:14 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/06/14 10:20:12 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 #include <bits/stdc++.h>
 
@@ -63,7 +75,7 @@ bool Fixed::operator!=(const Fixed &fixed)
 Fixed Fixed::operator+(const Fixed &fixed)
 {
 	if (((getRawBits() + fixed.getRawBits()) > (INT_MAX >> bits)) || ((getRawBits() + fixed.getRawBits()) < (INT_MIN >> bits))) {
-		std::cout << "Out of limits" << std::endl;
+		std::cout << "Exceed the limits" << std::endl;
 		return *this;
 	}
 	Fixed temp;
@@ -74,7 +86,7 @@ Fixed Fixed::operator+(const Fixed &fixed)
 Fixed Fixed::operator-(const Fixed &fixed)
 {
 	if ((getRawBits() - fixed.getRawBits() > (INT_MAX >> bits)) || ((getRawBits() - fixed.getRawBits()) < (INT_MIN >> bits))) {
-		std::cout << "Out of limits" << std::endl;
+		std::cout << "Exceed the limits" << std::endl;
 		return *this;
 	}
 	Fixed temp;

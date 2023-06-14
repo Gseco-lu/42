@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:14:11 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/05/16 17:43:08 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/06/14 10:11:28 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ Fixed::Fixed(int const i)
 Fixed::Fixed(float const f)
 {
 	this->raw_bits = roundf(f * (1 << Fixed::bits));
+
 }
 
 Fixed::Fixed(Fixed const &fixed)
@@ -75,7 +76,7 @@ bool Fixed::operator!=(const Fixed &fixed)
 Fixed Fixed::operator+(const Fixed &fixed)
 {
 	if (((getRawBits() + fixed.getRawBits()) > (INT_MAX >> bits)) || ((getRawBits() + fixed.getRawBits()) < (INT_MIN >> bits))) {
-		std::cout << "Out of limits" << std::endl;
+		std::cout << "Exceed the limits" << std::endl;
 		return *this;
 	}
 	Fixed temp;
@@ -86,7 +87,7 @@ Fixed Fixed::operator+(const Fixed &fixed)
 Fixed Fixed::operator-(const Fixed &fixed)
 {
 	if ((getRawBits() - fixed.getRawBits() > (INT_MAX >> bits)) || ((getRawBits() - fixed.getRawBits()) < (INT_MIN >> bits))) {
-		std::cout << "Out of limits" << std::endl;
+		std::cout << "Exceed the limits" << std::endl;
 		return *this;
 	}
 	Fixed temp;

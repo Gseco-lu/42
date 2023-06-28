@@ -75,7 +75,7 @@ void ClapTrap::attack(const std::string& target)
 		energy--;
 	}
 	else
-		std::cout << "\033[31m" << "("<< getName() << ") " << "not energy!" << "\033[37m" << std::endl;
+		std::cout << "\033[31m" << "("<< getName() << ") " << "no energy!" << "\033[37m" << std::endl;
 }
 
 void		ClapTrap::takeDamage( unsigned int amount )

@@ -56,7 +56,7 @@ void FragTrap::attack(const std::string& target)
 		energy--;
 	}
 	else
-		std::cout << "\033[33m" << "FragTrap ( "<< getName() << " ) " << "not energy!" << "\033[37m" << std::endl;
+		std::cout << "\033[33m" << "FragTrap ( "<< getName() << " ) " << "no energy!" << "\033[37m" << std::endl;
 }
 
 void FragTrap::highFivesGuys()

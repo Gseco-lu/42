@@ -46,7 +46,7 @@ int main(void)
 	Joe.guardGate();
 	std::cout << std::endl;
 
-	Sag.attack("himself");
+	Sag.attack("Ben");
 	Sag.beRepaired(18);
 	Sag.highFivesGuys();
 	Sag.takeDamage(250);

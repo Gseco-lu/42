@@ -61,7 +61,7 @@ void ScavTrap::attack(const std::string& target)
 		energy--;
 	}
 	else
-		std::cout << "\033[32m" << "("<< getName() << ") " << "not energy!" << "\037[37m" << std::endl;
+		std::cout << "\033[32m" << "("<< getName() << ") " << "no energy!" << "\037[37m" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)

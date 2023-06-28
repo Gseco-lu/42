@@ -58,8 +58,8 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &s)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "\033[34m" << "DiamondTrap ( " << name;
-	std::cout << "\033[34m" << ") ClapTrap ( " << ClapTrap::name << " )" << "\033[37m" << std::endl;
+	std::cout << "\033[34m" << "DiamondTrap (" << name;
+	std::cout << "\033[34m" << ") ClapTrap (" << ClapTrap::name << ")" << "\033[37m" << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &target)

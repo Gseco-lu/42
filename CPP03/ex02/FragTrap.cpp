@@ -61,7 +61,12 @@ void FragTrap::attack(const std::string& target)
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << "\033[33m" << "FragTrap ( " << name << " ) High Fives Guys!" << "\033[37m" << std::endl;
+	if (health <= 0)
+		std::cout << "\033[32m" << "FragTrap ("<< getName() << ") " << "is dead" << "\033[37m" << std::endl;
+	else if (energy <= 0)
+		std::cout << "\033[32m" << "FragTrap ("<< getName() << ") " << "doesn't have energy" << "\033[37m" << std::endl;
+	else
+		std::cout << "\033[33m" << "FragTrap ( " << getName() << " ) High Fives Guys!" << "\033[37m" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &s)

@@ -35,9 +35,23 @@ int main(void)
 	Ben.attack("Joe");
 	Ben.attack("Joe");
 	Ben.attack("Joe");
+	Ben.beRepaired(10);
 	Ben.takeDamage(17);
 	std::cout << std::endl;
 	
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
+	Joe.attack("Ben");
 	Joe.attack("Ben");
 	Joe.takeDamage(0);
 	Joe.beRepaired(134);
@@ -58,6 +72,8 @@ int main(void)
 	Wilse.whoAmI();
 	Wilse.beRepaired(1);
 	Wilse.takeDamage(123);
+	Wilse.beRepaired(1);
 	Wilse.whoAmI();
+	Wilse.guardGate();
 	std::cout << std::endl;
 }

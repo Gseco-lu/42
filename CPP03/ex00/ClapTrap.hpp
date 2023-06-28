@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include <string>
-#include <iostream>
-#include <stdlib.h>
+# include <string>
+# include <iostream>
+# include <stdlib.h>
 
 class ClapTrap {
 

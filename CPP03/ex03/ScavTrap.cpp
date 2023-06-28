@@ -40,12 +40,17 @@ ScavTrap::ScavTrap(const ScavTrap &scavtrap)
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "\033[32m" << "("<< getName() << ") ScavTrap destructor was called" << "\033[37m" << std::endl;
+	std::cout << "\033[32m" << "("<< name << ") ScavTrap destructor was called" << "\033[37m" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "\033[32m" << "ScavTrap " << name << " is now in Gatekeeper mode" << "\033[37m" << std::endl;
+	if (health <= 0)
+		std::cout << "\033[32m" << "ScavTrap ("<< getName() << ") " << "is dead" << "\033[37m" << std::endl;
+	else if (energy <= 0)
+		std::cout << "\033[32m" << "ScavTrap ("<< getName() << ") " << "doesn't have energy" << "\033[37m" << std::endl;
+	else
+		std::cout << "\033[32m" << "ScavTrap " << name << " is now in Gatekeeper mode" << "\033[37m" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)

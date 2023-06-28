@@ -11,12 +11,13 @@
 /* ************************************************************************** */
 
 #ifndef DIAMOND_TRAP_HPP
-#define DIAMOND_TRAP_HPP
+# define DIAMOND_TRAP_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
+# include "ClapTrap.hpp"
 
-class DiamondTrap: public  FragTrap, public ScavTrap{
+class DiamondTrap: public  ScavTrap, public FragTrap{
 
 	private:
 		std::string name;
@@ -27,7 +28,7 @@ class DiamondTrap: public  FragTrap, public ScavTrap{
 		DiamondTrap(const std::string &name);
 		~DiamondTrap();
 		DiamondTrap &operator=(const DiamondTrap &s);
-		virtual void attack(const std::string& target);
+		void attack(const std::string& target);
 		void whoAmI();
 };
 

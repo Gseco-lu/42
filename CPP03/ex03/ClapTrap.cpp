@@ -66,7 +66,7 @@ void ClapTrap::attack(const std::string& target)
 	
 	if (health <= 0)
 			std::cout << "\033[31m" <<" ("<< getName() << ") is dead " << "\033[37m" << std::endl;
-	else if (energy > 0)
+	else if (energy > 0 && health > 0)
 	{
 		std::cout << "\033[31m" << "ClapTrap: " << name;
 		std::cout << " attacks: " << target;
@@ -93,11 +93,21 @@ void		ClapTrap::takeDamage( unsigned int amount )
 }
 void		ClapTrap::beRepaired( unsigned int amount )
 {
-	this->health += amount;
-	if (this->health > this->healthMax)
+	if (energy > 0 && health > 0)
 	{
-		this->health = this->healthMax;
-		std::cout << "\033[31m" << "You can't heal more than your max!" << "\033[37m" << std::endl;
+		this->health += amount;
+		if (this->health > this->healthMax)
+		{
+			this->health = this->healthMax;
+			std::cout << "\033[31m" << "You can't heal more than your max!" << "\033[37m" << std::endl;
+		}
+		std::cout << "\033[31m" << "("<< getName() << ") " << "health: " << health << "\033[37m" << std::endl;
 	}
-	std::cout << "\033[31m" << "("<< getName() << ") " << "health: " << health << "\033[37m" << std::endl;
+	else 
+	{
+		if (health <= 0)
+			std::cout << "\033[31m" <<"("<< getName() << ") is dead " << "\033[37m" << std::endl;
+		else if (energy <= 0)
+			std::cout << "\033[31m" <<"("<< getName() << ") doesn't have energy " << "\033[37m" << std::endl;
+	}
 }

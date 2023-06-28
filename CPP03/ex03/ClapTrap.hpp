@@ -11,10 +11,10 @@
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
-#define CLAPTRAP_HPP
+# define CLAPTRAP_HPP
 
-#include <string>
-#include <iostream>
+# include <string>
+# include <iostream>
 
 class ClapTrap {
 
@@ -29,10 +29,10 @@ class ClapTrap {
 		ClapTrap();
 		ClapTrap(std::string name);
 		ClapTrap(const ClapTrap &claptrap);
-		virtual ~ClapTrap();
+		~ClapTrap();
 		std::string getName();
 		void setAttackPoint(int attack_p);
-		virtual void attack(const std::string& target);
+		void attack(const std::string& target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 		ClapTrap &operator=(const ClapTrap &claptrap);

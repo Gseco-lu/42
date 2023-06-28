@@ -11,11 +11,11 @@
 /* ************************************************************************** */
 
 #ifndef FRAGTRAP_HPP
-#define FRAGTRAP_HPP
+# define FRAGTRAP_HPP
 
-#include <string>
-#include <iostream>
-#include "ClapTrap.hpp"
+# include <string>
+# include <iostream>
+# include "ClapTrap.hpp"
 
 class FragTrap: public ClapTrap {
 

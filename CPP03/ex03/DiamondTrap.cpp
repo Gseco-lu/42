@@ -12,38 +12,42 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap()
+DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap()
 {
     this->name = "NULL";
     ClapTrap::name =  (this->name + "_clap_name");
     std::cout << "\033[34m" << "DiamondTrap constructor" << "\033[37m" << std::endl;;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &s)
+DiamondTrap::DiamondTrap(const DiamondTrap &s) : ClapTrap(s.name + "_clap_name"), ScavTrap(s.name), FragTrap(s.name)
 {
     this->health = s.FragTrap::health;
     this->healthMax = s.FragTrap::healthMax;
     this->energy = s.ScavTrap::energy;
     this->attack_p = s.FragTrap::attack_p;
     this->name = s.name;
-    ClapTrap::name =  (this->name + "_clap_name");
+    //FragTrap::name =  (name);
+    //ScavTrap::name =  (name);
+    //ClapTrap::name =  (this->name + "_clap_name");
     std::cout << "\033[34m" << "DiamondTrap is now a copy of " << s.name << "\033[37m" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string &name)
+DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
 {
     this->health = FragTrap::health;
     this->healthMax = FragTrap::healthMax;
     this->energy = ScavTrap::energy;
     this->attack_p = FragTrap::attack_p;
     this->name = name;
-    ClapTrap::name =  (this->name + "_clap_name");
+    //FragTrap::name =  (name);
+    //ScavTrap::name =  (name);
+    //ClapTrap::name =  (this->name + "_clap_name");
     std::cout << "\033[34m" << "DiamondTrap " << name << " was created" << "\033[37m" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "\033[34m" << "DiamondTrap: destroy" << "\033[37m" << std::endl;
+    std::cout << "\033[34m" << name << " DiamondTrap" << " destructor was called" << "\033[37m" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &s)

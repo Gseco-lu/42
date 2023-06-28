@@ -16,7 +16,7 @@ DiamondTrap::DiamondTrap()
 {
     this->name = "NULL";
     ClapTrap::name =  (this->name + "_clap_name");
-    std::cout << "DiamondTrap: Default constructor\n";
+    std::cout << "\033[34m" << "DiamondTrap constructor" << "\033[37m" << std::endl;;
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &s)
@@ -27,21 +27,23 @@ DiamondTrap::DiamondTrap(const DiamondTrap &s)
     this->attack_p = s.FragTrap::attack_p;
     this->name = s.name;
     ClapTrap::name =  (this->name + "_clap_name");
+    std::cout << "\033[34m" << "DiamondTrap is now a copy of " << s.name << "\033[37m" << std::endl;
 }
 
 DiamondTrap::DiamondTrap(const std::string &name)
 {
-     this->health = FragTrap::health;
+    this->health = FragTrap::health;
     this->healthMax = FragTrap::healthMax;
     this->energy = ScavTrap::energy;
     this->attack_p = FragTrap::attack_p;
     this->name = name;
     ClapTrap::name =  (this->name + "_clap_name");
+    std::cout << "\033[34m" << "DiamondTrap " << name << " was created" << "\033[37m" << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
 {
-    std::cout << "DiamondTrap: destroy\n";
+    std::cout << "\033[34m" << "DiamondTrap: destroy" << "\033[37m" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &s)
@@ -56,8 +58,8 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &s)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "DiamondTrap ( " << name;
-	std::cout << ") ClapTrap ( " << ClapTrap::name << " )" << std::endl;
+	std::cout << "\033[34m" << "DiamondTrap ( " << name;
+	std::cout << "\033[34m" << ") ClapTrap ( " << ClapTrap::name << " )" << "\033[37m" << std::endl;
 }
 
 void DiamondTrap::attack(const std::string &target)

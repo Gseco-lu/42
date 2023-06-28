@@ -14,7 +14,7 @@
 
 ScavTrap::ScavTrap()
 {
-	std::cout << "ScavTrap constructor was called" << std::endl;
+	std::cout << "\033[32m" << "ScavTrap constructor was called" << "\033[37m" << std::endl;
 	this->name = "NULL";
 	this->health = 100;
 	this->healthMax = 100;
@@ -24,7 +24,7 @@ ScavTrap::ScavTrap()
 
 ScavTrap::ScavTrap(std::string name)
 {
-	std::cout << "ScavTrap " << name << " was created" << std::endl;
+	std::cout << "\033[32m" << "ScavTrap " << name << " was created" << "\033[37m" << std::endl;
 	this->name = name;
 	this->health = 100;
 	this->healthMax = 100;
@@ -34,34 +34,34 @@ ScavTrap::ScavTrap(std::string name)
 
 ScavTrap::ScavTrap(const ScavTrap &scavtrap)
 {
-	std::cout << "ScavTrap is now a copy of " << scavtrap.name << std::endl;
+	std::cout << "\033[32m" << "ScavTrap is now a copy of " << scavtrap.name << "\033[37m" << std::endl;
 	*this = scavtrap;
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "("<< getName() << ") ScavTrap destructor was called" << std::endl;
+	std::cout << "\033[32m" << "("<< getName() << ") ScavTrap destructor was called" << "\033[37m" << std::endl;
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << name << " is now in Gatekeeper mode" << std::endl;
+	std::cout << "\033[32m" << "ScavTrap " << name << " is now in Gatekeeper mode" << "\033[37m" << std::endl;
 }
 
 void ScavTrap::attack(const std::string& target)
 {
 	
 	if (health <= 0)
-			std::cout << "ScavTrap not life of ("<< getName() << ") "<< std::endl;
+			std::cout << "\033[32m" << "ScavTrap ("<< getName() << ") " << "is dead" << "\033[37m" << std::endl;
 	else if (energy > 0)
 	{
-		std::cout << "ScavTrap: " << name;
+		std::cout << "\033[32m" << "ScavTrap: " << name;
 		std::cout << " attacks: " << target;
-		std::cout << " points of damage: " << attack_p << std::endl;
+		std::cout << " points of damage: " << attack_p << "\033[37m" << std::endl;
 		energy--;
 	}
 	else
-		std::cout << "("<< getName() << ") " << "not energy!\n";
+		std::cout << "\033[32m" << "("<< getName() << ") " << "not energy!" << "\037[37m" << std::endl;
 }
 
 ScavTrap &ScavTrap::operator=(const ScavTrap &scavtrap)

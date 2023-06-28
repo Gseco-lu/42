@@ -14,32 +14,50 @@
 
 int main(void)
 {
-	std::cout << "==============================================\n";
+	ClapTrap Ben("Ben");
+	ScavTrap Joe("Joe");
+	FragTrap Sag("Sag");
+	DiamondTrap Wilse("Wilse");
+	
 	std::cout << std::endl;
-	ClapTrap *test1 = new DiamondTrap("test1");
-		delete test1;
+	Ben.takeDamage(1);
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.beRepaired(10);
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.attack("Joe");
+	Ben.takeDamage(17);
 	std::cout << std::endl;
-	std::cout << "==============================================\n";
-	ClapTrap clap("A1");
-	ScavTrap momma("A2");
-	DiamondTrap baby("A3");
-	DiamondTrap jeff;
+	
+	Joe.attack("Ben");
+	Joe.takeDamage(0);
+	Joe.beRepaired(134);
+	Joe.guardGate();
+	Joe.takeDamage(9000);
+	Joe.guardGate();
 	std::cout << std::endl;
-	jeff.takeDamage(0);
-	jeff.attack("Old Guy");
-	baby.highFivesGuys();
-	baby.guardGate();
-	baby.whoAmI();
-	jeff.attack("Baby");
-	baby.takeDamage(30);
-	baby.takeDamage(30);
-	jeff.attack("Baby");
-	baby.takeDamage(30);
-	baby.takeDamage(30);
-	jeff.attack("Baby");
-	baby.takeDamage(30);
-	baby = jeff;
-	baby.whoAmI();
-	baby.beRepaired(100);
-	std::cout << "==============================================\n";
+
+	Sag.attack("himself");
+	Sag.beRepaired(18);
+	Sag.highFivesGuys();
+	Sag.takeDamage(250);
+	Sag.highFivesGuys();
+	std::cout << std::endl;
+	
+	Wilse.attack("Joe");
+	Wilse.takeDamage(1);
+	Wilse.whoAmI();
+	Wilse.beRepaired(1);
+	Wilse.takeDamage(123);
+	Wilse.whoAmI();
+	std::cout << std::endl;
 }

@@ -14,7 +14,7 @@
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor was called" << std::endl;
+	std::cout << "\033[31m" << "ClapTrap constructor was called" << "\033[37m" << std::endl;
 	this->name = "NULL";
 	this->health = 10;
 	this->energy = 10;
@@ -23,7 +23,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap(std::string name)
 {
-	std::cout << "ClapTrap " << name << " was created" << std::endl;
+	std::cout << "\033[31m" << "ClapTrap " << name << " was created"  << "\033[37m" << std::endl;
 	this->name = name;
 	this->health = 10;
 	this->healthMax = 10;
@@ -38,7 +38,7 @@ ClapTrap::ClapTrap(const ClapTrap &claptrap)
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "("<< getName() << ") Default destructor was called" << std::endl;
+	std::cout << "\033[31m" << "("<< getName() << ") ClapTrap destructor was called" << "\033[37m" << std::endl;
 }
 
 ClapTrap &ClapTrap::operator=(const ClapTrap &claptrap)
@@ -65,16 +65,16 @@ void ClapTrap::attack(const std::string& target)
 {
 	
 	if (health <= 0)
-			std::cout << " not life of ("<< getName() << ") "<< std::endl;
+			std::cout << "\033[31m" <<"("<< getName() << ") is dead " << "\033[37m" << std::endl;
 	else if (energy > 0)
 	{
-		std::cout << "ClapTrap: " << name;
+		std::cout << "\033[31m" << "ClapTrap: " << name;
 		std::cout << " attacks: " << target;
-		std::cout << " points of damage: " << attack_p << std::endl;
+		std::cout << " points of damage: " << attack_p  << "\033[37m" << std::endl;
 		energy--;
 	}
 	else
-		std::cout << "("<< getName() << ") " << "not energy!\n";
+		std::cout << "\033[31m" << "("<< getName() << ") " << "not energy!" << "\033[37m" << std::endl;
 }
 
 void		ClapTrap::takeDamage( unsigned int amount )
@@ -82,12 +82,14 @@ void		ClapTrap::takeDamage( unsigned int amount )
 
 	if (amount > 0)
 	{
-		health = (health - amount) * health >= amount; 
-		std::cout << "("<< getName() << ") " << "takeDamage: " << amount;
-		std::cout << " health " << this->health << std::endl;
+		health = (health - amount);
+		if (health < 0)
+			health = 0;
+		std::cout << "\033[31m" << "("<< getName() << ") " << "takeDamage: " << amount;
+		std::cout << " health: " << this->health << "\033[37m" << std::endl;
 	}
 	if (health <= 0)
-		std::cout << " not life of ("<< getName() << ") "<< std::endl;
+		std::cout << "\033[31m" <<"("<< getName() << ") is dead " << "\033[37m" << std::endl;
 }
 void		ClapTrap::beRepaired( unsigned int amount )
 {
@@ -95,7 +97,7 @@ void		ClapTrap::beRepaired( unsigned int amount )
 	if (this->health > this->healthMax)
 	{
 		this->health = this->healthMax;
-		(std::cout << "You can't heal more than your max!" << std::endl);
+		std::cout << "\033[31m" << "You can't heal more than your max!" << "\033[37m" << std::endl;
 	}
-	std::cout << "("<< getName() << ") " << "health: " << health << std::endl;
+	std::cout << "\033[31m" << "("<< getName() << ") " << "health: " << health << "\033[37m" << std::endl;
 }

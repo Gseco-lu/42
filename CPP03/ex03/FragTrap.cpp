@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap()
 {
-	std::cout << "FragTrap constructor was called" << std::endl;
+	std::cout << "\033[33m" << "FragTrap constructor was called" << "\033[37m" << std::endl;
 	this->name = "NULL";
 	this->health = 100;
 	this->healthMax = 100;
@@ -24,7 +24,7 @@ FragTrap::FragTrap()
 
 FragTrap::FragTrap(std::string name)
 {
-	std::cout << "FragTrap " << name << " was created" << std::endl;
+	std::cout << "\033[33m" << "FragTrap " << name << " was created" << "\033[37m" << std::endl;
 	this->name = name;
 	this->health = 100;
 	this->healthMax = 100;
@@ -34,34 +34,34 @@ FragTrap::FragTrap(std::string name)
 
 FragTrap::FragTrap(const FragTrap &s)
 {
-	std::cout << "FragTrap is now a copy of " << s.name << std::endl;
+	std::cout << "\033[33m" << "FragTrap is now a copy of " << s.name << "\033[37m" << std::endl;
 	*this = s;
 }
 
 FragTrap::~FragTrap()
 {
-	std::cout << "("<< getName() << ") FragTrap destructor was called" << std::endl;
+	std::cout << "\033[33m" << "("<< getName() << ") FragTrap destructor was called" << "\033[37m" << std::endl;
 }
 
 void FragTrap::attack(const std::string& target)
 {
 	
 	if (health <= 0)
-			std::cout << "FragTrap not life of ("<< getName() << ") "<< std::endl;
+			std::cout << "\033[33m" << "FragTrap ("<< getName() << ") is dead" << "\033[37m" << std::endl;
 	else if (energy > 0)
 	{
-		std::cout << "FragTrap: ( " << name;
+		std::cout << "\033[33m" << "FragTrap: ( " << name;
 		std::cout << " ) attacks: " << target;
-		std::cout << " points of damage: " << attack_p << std::endl;
+		std::cout << " points of damage: " << attack_p << "\033[37m" << std::endl;
 		energy--;
 	}
 	else
-		std::cout << "FragTrap ( "<< getName() << " ) " << "not energy!\n";
+		std::cout << "\033[33m" << "FragTrap ( "<< getName() << " ) " << "not energy!" << "\033[37m" << std::endl;
 }
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << "FragTrap ( " << name << " ) High Fives Guys!" << std::endl;
+	std::cout << "\033[33m" << "FragTrap ( " << name << " ) High Fives Guys!" << "\033[37m" << std::endl;
 }
 
 FragTrap &FragTrap::operator=(const FragTrap &s)

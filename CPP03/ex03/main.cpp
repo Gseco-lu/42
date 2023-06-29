@@ -37,6 +37,7 @@ int main(void)
 	Ben.attack("Joe");
 	Ben.beRepaired(10);
 	Ben.takeDamage(17);
+	Ben.beRepaired(10);
 	std::cout << std::endl;
 	
 	Joe.attack("Ben");

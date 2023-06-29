@@ -10,28 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef FRAGTRAP_HPP_
+# define FRAGTRAP_HPP_
 
-# include <string>
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class FragTrap: public  virtual  ClapTrap {
+class FragTrap : virtual public ClapTrap
+{
+private:
+	std::string name;
 
-	private:
+protected:
+	FragTrap();
 
-
-	public:
-		FragTrap();
-		FragTrap(std::string name);
-		FragTrap(const FragTrap &s);
-		FragTrap &operator=(const FragTrap &s);
-		~FragTrap();
-		void attack(const std::string& target);
-		void highFivesGuys(void);
-
+public:
+	FragTrap(std::string name);
+	FragTrap(FragTrap const &S);
+	~FragTrap();
+	void operator=(const FragTrap &c);
+	void highFivesGuys(void);
 };
-
 
 #endif

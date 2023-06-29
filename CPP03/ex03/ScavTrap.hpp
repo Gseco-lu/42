@@ -10,28 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCAVTRAP_HPP
-# define SCAVTRAP_HPP
+#ifndef SCAVTRAP_HPP_
+#define SCAVTRAP_HPP_
 
-# include <string>
-# include <iostream>
-# include "ClapTrap.hpp"
+#include <iostream>
+#include "ClapTrap.hpp"
 
-class ScavTrap: public  virtual  ClapTrap {
+class ScavTrap : virtual public ClapTrap
+{
+private:
+	std::string name;
 
-	private:
-
-
-	public:
-		ScavTrap();
-		ScavTrap(std::string name);
-		ScavTrap(const ScavTrap &scavtrap);
-		ScavTrap &operator=(const ScavTrap &scavtrap);
-		~ScavTrap();
-		void guardGate();
-		void attack(const std::string& target);
+public:
+	ScavTrap();
+	ScavTrap(std::string name);
+	ScavTrap(ScavTrap const &S);
+	~ScavTrap();
+	void operator=(const ScavTrap &c);
+	void attack(const std::string& target);
+	void guardGate();
 
 };
+
 
 
 #endif

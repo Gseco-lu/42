@@ -12,36 +12,23 @@
 
 #include "DiamondTrap.hpp"
 
-DiamondTrap::DiamondTrap(): ClapTrap(), ScavTrap(), FragTrap()
+DiamondTrap::DiamondTrap() :  ScavTrap(), FragTrap(), name("NULL")
 {
-    this->name = "NULL";
-    ClapTrap::name =  (this->name + "_clap_name");
     std::cout << "\033[34m" << "DiamondTrap constructor" << "\033[37m" << std::endl;;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &s) : ClapTrap(s.name + "_clap_name"), ScavTrap(s.name), FragTrap(s.name)
+DiamondTrap::DiamondTrap(DiamondTrap const &S) : ClapTrap(name + "_clapname"), ScavTrap(name), FragTrap(name), name(S.name)
 {
-    this->health = s.FragTrap::health;
-    this->healthMax = s.FragTrap::healthMax;
-    this->energy = s.ScavTrap::energy;
-    this->attack_p = s.FragTrap::attack_p;
-    this->name = s.name;
-    //FragTrap::name =  (name);
-    //ScavTrap::name =  (name);
-    //ClapTrap::name =  (this->name + "_clap_name");
-    std::cout << "\033[34m" << "DiamondTrap is now a copy of " << s.name << "\033[37m" << std::endl;
+    this->FragTrap::hitPoints = (S.FragTrap::getHP());
+	this->ScavTrap::energyPoints = (S.ScavTrap::getEP());
+	this->FragTrap::attackDamage = (S.FragTrap::getAD());
+    std::cout << "\033[34m" << "DiamondTrap is now a copy of " << S.name << "\033[37m" << std::endl;
 }
 
-DiamondTrap::DiamondTrap(const std::string &name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name)
-{
-    this->health = FragTrap::health;
-    this->healthMax = FragTrap::healthMax;
-    this->energy = ScavTrap::energy;
-    this->attack_p = FragTrap::attack_p;
-    this->name = name;
-    //FragTrap::name =  (name);
-    //ScavTrap::name =  (name);
-    //ClapTrap::name =  (this->name + "_clap_name");
+DiamondTrap::DiamondTrap(std::string name) :  ClapTrap(name + "_clapname"), ScavTrap(name), FragTrap(name), name(name)
+{   
+    ScavTrap S;
+	this->energyPoints = S.getEP();
     std::cout << "\033[34m" << "DiamondTrap " << name << " was created" << "\033[37m" << std::endl;
 }
 
@@ -50,23 +37,17 @@ DiamondTrap::~DiamondTrap()
     std::cout << "\033[34m" << name << " DiamondTrap" << " destructor was called" << "\033[37m" << std::endl;
 }
 
-DiamondTrap &DiamondTrap::operator=(const DiamondTrap &s)
+void DiamondTrap::operator=(const DiamondTrap &S)
 {
-    this->name = s.name;
-    this->ClapTrap::name  = s.ClapTrap::name;
-	this->health = s.health;
-	this->energy = s.energy;
-	this->attack_p = s.attack_p;
-    return (*this);
+	this->FragTrap::hitPoints = (S.FragTrap::getHP());
+	this->ScavTrap::energyPoints = (S.ScavTrap::getEP());
+	this->FragTrap::attackDamage = (S.FragTrap::getAD());
 }
 
-void DiamondTrap::whoAmI()
+void DiamondTrap::whoAmI(void)
 {
+	if (!checkStats())
+		return ;
 	std::cout << "\033[34m" << "DiamondTrap (" << name;
-	std::cout << "\033[34m" << ") ClapTrap (" << ClapTrap::name << ")" << "\033[37m" << std::endl;
-}
-
-void DiamondTrap::attack(const std::string &target)
-{
-    ScavTrap::attack(target);
+	std::cout << "\033[34m" << ") ClapTrap (" << this->ClapTrap::getName() << ")" << "\033[37m" << std::endl;
 }

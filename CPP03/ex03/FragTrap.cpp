@@ -12,30 +12,28 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap()
+FragTrap::FragTrap() : ClapTrap(), name("NULL")
 {
 	std::cout << "\033[33m" << "FragTrap constructor was called" << "\033[37m" << std::endl;
-	this->name = "NULL";
-	this->health = 100;
-	this->healthMax = 100;
-	this->energy = 100;
-	this->attack_p = 30;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 }
 
-FragTrap::FragTrap(std::string name)
-{
+FragTrap::FragTrap(std::string name) : ClapTrap(name), name(name)
+{	
 	std::cout << "\033[33m" << "FragTrap " << name << " was created" << "\033[37m" << std::endl;
-	this->name = name;
-	this->health = 100;
-	this->healthMax = 100;
-	this->energy = 100;
-	this->attack_p = 30;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 }
 
-FragTrap::FragTrap(const FragTrap &s)
+FragTrap::FragTrap(FragTrap const &S) : name(S.name)
 {
-	std::cout << "\033[33m" << "FragTrap is now a copy of " << s.name << "\033[37m" << std::endl;
-	*this = s;
+	std::cout << "\033[33m" << "FragTrap is now a copy of " << S.name << "\033[37m" << std::endl;
+	this->hitPoints = (S.getHP());
+	this->energyPoints = (S.getEP());
+	this->attackDamage = (S.getAD());
 }
 
 FragTrap::~FragTrap()
@@ -43,38 +41,16 @@ FragTrap::~FragTrap()
 	std::cout << "\033[33m" << "("<< this->name << ") FragTrap destructor was called" << "\033[37m" << std::endl;
 }
 
-void FragTrap::attack(const std::string& target)
-{
-	
-	if (health <= 0)
-			std::cout << "\033[33m" << "FragTrap ("<< getName() << ") is dead" << "\033[37m" << std::endl;
-	else if (energy > 0)
-	{
-		std::cout << "\033[33m" << "FragTrap: ( " << name;
-		std::cout << " ) attacks: " << target;
-		std::cout << " points of damage: " << attack_p << "\033[37m" << std::endl;
-		energy--;
-	}
-	else
-		std::cout << "\033[33m" << "FragTrap ( "<< getName() << " ) " << "no energy!" << "\033[37m" << std::endl;
-}
-
 void FragTrap::highFivesGuys()
 {
-	if (health <= 0)
-		std::cout << "\033[32m" << "FragTrap ("<< getName() << ") " << "is dead" << "\033[37m" << std::endl;
-	else if (energy <= 0)
-		std::cout << "\033[32m" << "FragTrap ("<< getName() << ") " << "doesn't have energy" << "\033[37m" << std::endl;
-	else
-		std::cout << "\033[33m" << "FragTrap ( " << getName() << " ) High Fives Guys!" << "\033[37m" << std::endl;
+	if (!checkStats())
+		return ;
+	std::cout << "\033[33m" << "FragTrap ( " << this->name << " ) High Fives Guys!" << "\033[37m" << std::endl;
 }
 
-FragTrap &FragTrap::operator=(const FragTrap &s)
+void FragTrap::operator=(const FragTrap &S)
 {
-	this->name = s.name;
-	this->health = s.health;
-	this->healthMax = s.healthMax;
-	this->energy = s.energy;
-	this->attack_p = s.attack_p;
-	return *this;
+	this->hitPoints = (S.getHP());
+	this->energyPoints = (S.getEP());
+	this->attackDamage = (S.getAD());
 }

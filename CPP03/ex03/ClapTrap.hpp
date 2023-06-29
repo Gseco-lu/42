@@ -10,34 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef CLAPTRAP_HPP_
+#define CLAPTRAP_HPP_
 
-# include <string>
-# include <iostream>
+#include <iostream>
 
-class ClapTrap {
+class ClapTrap
+{
+private:
+	std::string name;
 
-	protected:
-		std::string name;
-		int health;
-		int healthMax;
-		int energy;
-		int attack_p;
+protected:
+	ClapTrap();
 
-	public:
-		ClapTrap();
-		ClapTrap(std::string name);
-		ClapTrap(const ClapTrap &claptrap);
-		~ClapTrap();
-		std::string getName();
-		void setAttackPoint(int attack_p);
-		void attack(const std::string& target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		ClapTrap &operator=(const ClapTrap &claptrap);
+	int hitPoints;
+	int energyPoints;
+	int	attackDamage;
+	std::string getName() const;
+
+	bool checkStats() const;
+
+public:
+	ClapTrap(std::string name);
+	ClapTrap(ClapTrap const &C);
+	~ClapTrap();
+	void operator=(const ClapTrap &c);
+	
+	int getHP() const;
+	int getEP() const;
+	int getAD() const;
+	void attack(const std::string& target);
+	void takeDamage(unsigned int amount);
+	void beRepaired(unsigned int amount);
 
 };
-
 
 #endif

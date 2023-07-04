@@ -26,12 +26,13 @@ protected:
 	int hitPoints;
 	int energyPoints;
 	int	attackDamage;
+	int	maxHealth;
 	std::string getName() const;
 
 	bool checkStats() const;
 
 public:
-	ClapTrap(std::string name);
+	ClapTrap(std::string namee);
 	ClapTrap(ClapTrap const &C);
 	~ClapTrap();
 	void operator=(const ClapTrap &c);

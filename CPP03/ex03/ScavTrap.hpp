@@ -23,7 +23,7 @@ private:
 
 public:
 	ScavTrap();
-	ScavTrap(std::string name);
+	ScavTrap(std::string namee);
 	ScavTrap(ScavTrap const &S);
 	~ScavTrap();
 	void operator=(const ScavTrap &c);

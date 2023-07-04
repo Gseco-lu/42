@@ -12,33 +12,36 @@
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap() : ClapTrap(), name("NULL")
+ScavTrap::ScavTrap() : ClapTrap()
 {
 	std::cout << "\033[32m" << "ScavTrap constructor was called" << "\033[37m" << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
+	this->maxHealth = 100;
 }
 
-ScavTrap::ScavTrap(std::string name) :  ClapTrap(name), name(name)
+ScavTrap::ScavTrap(std::string namee) :  ClapTrap(namee), name(namee)
 {
 	std::cout << "\033[32m" << "ScavTrap " << name << " was created" << "\033[37m" << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 50;
 	this->attackDamage = 20;
+	this->maxHealth = 100;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &S) : name(S.name)
+ScavTrap::ScavTrap(ScavTrap const &S) : ClapTrap(S.name), name(S.name)
 {
-	std::cout << "\033[32m" << "ScavTrap is now a copy of " << S.name << "\033[37m" << std::endl;
+	std::cout << "\033[32m" << "ScavTrap is now a copy of " << this->name << "\033[37m" << std::endl;
 	this->hitPoints = (S.getHP());
 	this->energyPoints = (S.getEP());
 	this->attackDamage = (S.getAD());
+	this->maxHealth = (S.getHP());
 }
 
 ScavTrap::~ScavTrap()
 {
-	std::cout << "\033[32m" << "("<< getName() << ") ScavTrap destructor was called" << "\033[37m" << std::endl;
+	std::cout << "\033[32m" << "("<< this->name << ") ScavTrap destructor was called" << "\033[37m" << std::endl;
 }
 
 void ScavTrap::guardGate()
@@ -63,4 +66,5 @@ void ScavTrap::operator=(const ScavTrap &S)
 	this->hitPoints = (S.getHP());
 	this->energyPoints = (S.getEP());
 	this->attackDamage = (S.getAD());
+	this->maxHealth = (S.getHP());
 }

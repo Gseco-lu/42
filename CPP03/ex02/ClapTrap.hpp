@@ -25,6 +25,7 @@ private:
 
 protected:
 
+	int	maxHealth;
 	bool checkStats() const;
 	int getHP() const;
 	int getEP() const;

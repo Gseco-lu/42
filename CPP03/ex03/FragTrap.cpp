@@ -12,28 +12,31 @@
 
 #include "FragTrap.hpp"
 
-FragTrap::FragTrap() : ClapTrap(), name("NULL")
+FragTrap::FragTrap() : ClapTrap()
 {
 	std::cout << "\033[33m" << "FragTrap constructor was called" << "\033[37m" << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
+	this->maxHealth = 100;
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name), name(name)
+FragTrap::FragTrap(std::string namee) : ClapTrap(namee), name(namee)
 {	
 	std::cout << "\033[33m" << "FragTrap " << name << " was created" << "\033[37m" << std::endl;
 	this->hitPoints = 100;
 	this->energyPoints = 100;
 	this->attackDamage = 30;
+	this->maxHealth = 100;
 }
 
-FragTrap::FragTrap(FragTrap const &S) : name(S.name)
+FragTrap::FragTrap(FragTrap const &S) : ClapTrap(S.name), name(S.name)
 {
 	std::cout << "\033[33m" << "FragTrap is now a copy of " << S.name << "\033[37m" << std::endl;
 	this->hitPoints = (S.getHP());
 	this->energyPoints = (S.getEP());
 	this->attackDamage = (S.getAD());
+	this->maxHealth = (S.getHP());
 }
 
 FragTrap::~FragTrap()
@@ -53,4 +56,5 @@ void FragTrap::operator=(const FragTrap &S)
 	this->hitPoints = (S.getHP());
 	this->energyPoints = (S.getEP());
 	this->attackDamage = (S.getAD());
+	this->maxHealth = (S.getHP());
 }

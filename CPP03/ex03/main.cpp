@@ -71,8 +71,8 @@ int main(void)
 	Wilse.attack("Joe");
 	Wilse.takeDamage(1);
 	Wilse.whoAmI();
-	Wilse.beRepaired(1);
-	Wilse.takeDamage(123);
+	Wilse.beRepaired(5);
+	Wilse.takeDamage(13);
 	Wilse.beRepaired(1);
 	Wilse.whoAmI();
 	Wilse.guardGate();

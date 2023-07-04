@@ -25,7 +25,7 @@ protected:
 	FragTrap();
 
 public:
-	FragTrap(std::string name);
+	FragTrap(std::string namee);
 	FragTrap(FragTrap const &S);
 	~FragTrap();
 	void operator=(const FragTrap &c);

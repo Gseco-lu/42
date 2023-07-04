@@ -23,6 +23,7 @@ private:
 	int energyPoints;
 	int	attackDamage;
 	bool checkStats();
+	int	maxHealth;
 	
 public:
 	ClapTrap();

@@ -18,6 +18,7 @@ FragTrap::FragTrap() : ClapTrap(), name("NULL")
 	this->setHP(100);
 	this->setEP(100);
 	this->setAD(30);
+	this->maxHealth = 100;
 }
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name), name(name)
@@ -26,14 +27,16 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name), name(name)
 	this->setHP(100);
 	this->setEP(100);
 	this->setAD(30);
+	this->maxHealth = 100;
 }
 
-FragTrap::FragTrap(FragTrap const &S) : name(S.name)
+FragTrap::FragTrap(FragTrap const &S) : ClapTrap(S.name), name(S.name)
 {
 	std::cout << "\033[33m" << "FragTrap is now a copy of " << S.name << "\033[37m" << std::endl;
 	this->setHP(S.getHP());
 	this->setEP(S.getEP());
 	this->setAD(S.getAD());
+	this->maxHealth = S.getHP();
 }
 
 FragTrap::~FragTrap()
@@ -53,4 +56,5 @@ void FragTrap::operator=(const FragTrap &S)
 	this->setHP(S.getHP());
 	this->setEP(S.getEP());
 	this->setAD(S.getAD());
+	this->maxHealth = S.getHP();
 }

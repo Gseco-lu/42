@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/12 09:46:27 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/07/12 09:46:27 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 
 Dog::Dog(void) : Animal()
@@ -20,7 +32,7 @@ Dog::~Dog(void)
 	std::cout << "[Dog Default destructor " << this->type << "]" << std::endl;
 }
 
-Dog::Dog(Dog const &C) : Animal(type)
+Dog::Dog(Dog const &C) : Animal(C.type)
 {
 	this->_brain = new Brain;
 	this->type = C.type;
@@ -36,13 +48,13 @@ Dog &Dog::operator =(Dog const &C)
 		this->_brain = new Brain;
 		this->type = C.type;
 	}
-	std::cout << "[Dog AO " << this->type << "]" << std::endl;
+	std::cout << "[Dog copy called " << this->type << "]" << std::endl;
 	return *this;
 }
 
 void Dog::makeSound() const
 {
-	std::cout << this->type << ": Bark Bark Bish" << std::endl;
+	std::cout << this->type << ": GRRRRRRRRRR" << std::endl;
 }
 
 std::string Dog::getType() const

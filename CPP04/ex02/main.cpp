@@ -1,14 +1,26 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/12 09:46:53 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/07/12 09:46:53 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Dog.hpp"
 #include "Cat.hpp"
 
 int main()
 {
 	AAnimal *x = new Dog;
-	Cat y("y");
-	Dog z("z");
+	Cat y("cat");
+	Dog z("dog");
 
-	z->getType();
-	z->makeSound();
+	x->getType();
+	x->makeSound();
 	
 	y.getType();
 	y.makeSound();
@@ -16,5 +28,5 @@ int main()
 	z.getType();
 	z.makeSound();
 
-	delete rafeiro;
+	delete x;
 }

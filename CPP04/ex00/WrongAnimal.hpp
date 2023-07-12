@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/12 09:46:06 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/07/12 09:46:06 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef WRONGANIMAL_HPP_
 # define WRONGANIMAL_HPP_
 
@@ -15,7 +27,7 @@ public:
 	virtual ~WrongAnimal();
 	WrongAnimal &operator=(WrongAnimal const &A);
 
-	void	makeSound() const;
+	virtual void	makeSound() const;
 	std::string getType() const;
 };
 

@@ -1,31 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   AAnimal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/12 09:46:10 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 09:46:10 by gseco-lu         ###   ########.fr       */
+/*   Created: 2023/07/12 09:46:37 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/07/12 09:46:37 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP_
-# define WRONGCAT_HPP_
+#ifndef AAnimal_HPP_
+# define AAnimal_HPP_
 
-# include "WrongAnimal.hpp"
+# include <iostream>
 
-class WrongCat : public WrongAnimal
+class AAnimal
 {
-public:
-	WrongCat();
-	WrongCat(std::string type);
-	WrongCat(WrongCat const &C);
-	~WrongCat();
-	WrongCat &operator =(WrongCat const &C);
+protected:
+	std::string type;
 
-	virtual void makeSound() const;
-	std::string getType() const;
+public:
+	AAnimal();
+	AAnimal(std::string name);
+	AAnimal(AAnimal const &A);
+	virtual ~AAnimal();
+	AAnimal &operator=(AAnimal const &A);
+
+	virtual void	makeSound() const = 0;
+	virtual std::string getType() const = 0;
 };
 
 

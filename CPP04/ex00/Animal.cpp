@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/12 09:45:48 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/07/12 09:45:48 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Animal.hpp"
 
 Animal::Animal(void) : type("Unknown Animal")
@@ -24,7 +36,7 @@ Animal::~Animal()
 Animal &Animal::operator=(Animal const &A)
 {
 	this->type = A.type;
-	std::cout << "[Animal AO " << this->type << "]" << std::endl;	
+	std::cout << "[Animal copy called " << this->type << "]" << std::endl;	
 	return *this;
 }
 

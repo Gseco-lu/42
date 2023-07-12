@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/12 09:46:04 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/07/12 09:46:04 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "WrongAnimal.hpp"
 
 WrongAnimal::WrongAnimal(void) : type("Unknown WrongAnimal")
@@ -24,13 +36,13 @@ WrongAnimal::~WrongAnimal()
 WrongAnimal &WrongAnimal::operator=(WrongAnimal const &A)
 {
 	this->type = A.type;
-	std::cout << "[WrongAnimal AO " << this->type << "]" << std::endl;	
+	std::cout << "[WrongAnimal copy called " << this->type << "]" << std::endl;	
 	return *this;
 }
 
 void	WrongAnimal::makeSound() const
 {
-	std::cout << "REEEEEEEEEEEEEEEEE" << std::endl;	
+	std::cout << "RRRRRRRRRRRRR" << std::endl;	
 }
 
 std::string WrongAnimal::getType() const

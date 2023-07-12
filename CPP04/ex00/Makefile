@@ -1,23 +1,24 @@
-CC			= 	g++ -std=c++98
-CFLAGS		= 	-Wall -Wextra -Werror -Wshadow  -g\
-				# -fsanitize=address
+CC = c++
+
+FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address
+
 NAME		= 	animal
-SRCS		=	$(wildcard *.cpp)
+
+SRC = main.cpp\
+		Animal.cpp\
+		Cat.cpp\
+		Dog.cpp\
+		WrongAnimal.cpp\
+		WrongCat.cpp
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
-	@$(CC) $(CFLAGS) $(SRCS) -I. -o $(NAME)
+$(NAME): $(SRC)
+	$(CC) $(FLAGS) $(SRC) -o $(NAME)
 
 fclean:
-	@rm -rf $(NAME)
+		rm -rf $(NAME)
 
 re: fclean all
-
-clr:
-	@clear
-
-e: clr re clr
-	@./$(NAME)
 
 .PHONY: all fclean re

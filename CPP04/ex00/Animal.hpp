@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/07/12 09:45:51 by gseco-lu          #+#    #+#             */
+/*   Updated: 2023/07/12 09:45:51 by gseco-lu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef ANIMAL_HPP_
 # define ANIMAL_HPP_
 
@@ -16,7 +28,7 @@ public:
 	Animal &operator=(Animal const &A);
 
 	virtual void	makeSound() const;
-	virtual std::string getType() const;
+	std::string getType() const;
 };
 
 

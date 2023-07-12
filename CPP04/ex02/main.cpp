@@ -15,6 +15,7 @@
 
 int main()
 {
+	//AAnimal *x = new AAnimal;
 	AAnimal *x = new Dog;
 	Cat y("cat");
 	Dog z("dog");

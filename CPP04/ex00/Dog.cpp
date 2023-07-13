@@ -14,7 +14,7 @@
 
 Dog::Dog(void) : Animal()
 {
-	this->type = "Unknown";
+	this->type = "Unknown Dog";
 	std::cout << "[Dog Default constructor " << this->type << "]" << std::endl;
 }
 

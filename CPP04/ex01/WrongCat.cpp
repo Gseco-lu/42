@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:01:56 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 10:25:38 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 14:56:27 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ WrongCat &WrongCat::operator =(WrongCat const &C)
 
 void WrongCat::makeSound() const
 {
-	std::cout << "uaim uaim uaim" << std::endl;
+	std::cout << "Wrong Miau" << std::endl;
 }
 
 std::string WrongCat::getType() const

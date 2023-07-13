@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:28:57 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 11:29:04 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:06:15 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 IMateriaSource::~IMateriaSource()
 {
-	std::cout << "\e[0;31mDestructor called of IMateriaSource\e[0m" << std::endl;
+	std::cout << "Destructor called of IMateriaSource" << std::endl;
 }

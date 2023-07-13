@@ -15,13 +15,21 @@
 
 int main()
 {
-	unsigned int n = 9;
-	Animal *horde[n];
+	int n = 7;
+	Animal *group[n];
+	Animal *q = new Animal();
 
-	for (unsigned int i = 0; i < n; i++)
-		i < n/2 ? horde[i] = new Cat() : horde[i] = new Dog();
-	for (unsigned int i = 0; i < n; i++)
-		horde[i]->makeSound();
-	for (unsigned int i = 0; i < n; i++)
-		delete horde[i];
+	(void) q;
+	for (int i = 0; i < n; i++)
+	{
+		if (n/2 > i)
+			group[i] = new Cat();
+		else
+			 group[i] = new Dog();
+	}
+	for (int i = 0; i < n; i++)
+		group[i]->makeSound();
+	for (int i = 0; i < n; i++)
+		delete group[i];
+	delete q;
 }

@@ -19,7 +19,7 @@
 class Dog : public AAnimal
 {
 	private:
-		Brain *_brain;
+		Brain *brain;
 
 	public:
 		Dog();

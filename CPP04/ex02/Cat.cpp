@@ -16,19 +16,19 @@ Cat::Cat(void) : AAnimal()
 {
 	this->type = "Unknown";
 	std::cout << "[Cat Default constructor " << this->type << "]" << std::endl;
-	this->_brain = new Brain;
+	this->brain = new Brain;
 }
 
 Cat::Cat(std::string name) : AAnimal(name)
 {
 	this->type = name;
 	std::cout << "[Cat Parameterized constructor " << this->type << "]" << std::endl;
-	this->_brain = new Brain;
+	this->brain = new Brain;
 }
 
 Cat::~Cat(void)
 {
-	delete this->_brain;
+	delete this->brain;
 	std::cout << "[Cat Default destructor " << this->type << "]" << std::endl;
 }
 
@@ -47,7 +47,7 @@ Cat &Cat::operator =(Cat const &C)
 
 void Cat::makeSound() const
 {
-	std::cout << this->type << ": Meow Meow" << std::endl;
+	std::cout << this->type << ": Miau" << std::endl;
 }
 
 std::string Cat::getType() const

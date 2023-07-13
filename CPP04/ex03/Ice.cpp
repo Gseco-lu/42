@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:29:40 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 11:29:49 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:05:53 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,20 @@
 
 Ice::Ice() : AMateria()
 {
-	std::cout << "\e[0;33mDefault Constructor called of Ice\e[0m" << std::endl;
+	std::cout << "Default Constructor called of Ice" << std::endl;
 	this->_type = "ice";
 }
 
 Ice::Ice(const Ice &copy) : AMateria(copy)
 {
-	std::cout << "\e[0;33mCopy Constructor called of Ice\e[0m" << std::endl;
+	std::cout << "Copy Constructor called of Ice" << std::endl;
 	this->_type = "ice";
 	(void)copy;
 }
 
 Ice::~Ice()
 {
-	std::cout << "\e[0;31mDestructor called of Ice\e[0m" << std::endl;
+	std::cout << "Destructor called of Ice" << std::endl;
 }
 
 Ice & Ice::operator=(const Ice &assign)

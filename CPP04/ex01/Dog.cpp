@@ -14,27 +14,27 @@
 
 Dog::Dog(void) : Animal()
 {
-	this->type = "NULL";
+	this->type = "Unknown";
 	std::cout << "[Dog Default constructor " << this->type << "]" << std::endl;
-	this->_brain = new Brain;
+	this->brain = new Brain;
 }
 
 Dog::Dog(std::string name) : Animal(name)
 {
 	this->type = name;
 	std::cout << "[Dog Parameterized constructor " << this->type << "]" << std::endl;
-	this->_brain = new Brain;
+	this->brain = new Brain;
 }
 
 Dog::~Dog(void)
 {
-	delete this->_brain;
+	delete this->brain;
 	std::cout << "[Dog Default destructor " << this->type << "]" << std::endl;
 }
 
 Dog::Dog(Dog const &C) : Animal(C.type)
 {
-	this->_brain = new Brain;
+	this->brain = C.brain;
 	this->type = C.type;
 	std::cout << "[Dog Copy constructor " << this->type << "]" << std::endl;
 }
@@ -43,9 +43,9 @@ Dog &Dog::operator =(Dog const &C)
 {
 	if (this != &C)
 	{
-		if (this->_brain)
-			delete this->_brain;
-		this->_brain = new Brain;
+		if (this->brain)
+			delete this->brain;
+		this->brain = C.brain;
 		this->type = C.type;
 	}
 	std::cout << "[Dog copy called " << this->type << "]" << std::endl;

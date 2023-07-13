@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:32:06 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 11:51:08 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 16:20:35 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,50 +18,54 @@
 
 int main()
 {
-	IMateriaSource* src = new MateriaSource();
-	ICharacter* me = new Character("me");
-	ICharacter* bob = new Character("bob");
+	IMateriaSource* mat = new MateriaSource();
+	ICharacter* x = new Character("xx");
+	ICharacter* y = new Character("yy");
 	AMateria* tmp;
+	AMateria* tmp1;
 	
-	me->use(0, *bob);
-	me->use(1, *bob);
+	x->use(0, *y);
+	x->use(1, *y);
 	
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
-	src->learnMateria(new Ice());
-	src->learnMateria(new Cure());
+	mat->learnMateria(new Ice());
+	mat->learnMateria(new Cure());
+	//src->learnMateria(new Ice());
+	//src->learnMateria(new Cure());
 	// src->learnMateria(new Ice());
 	// src->learnMateria(new Cure());
 
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("ice");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = src->createMateria("cure");
-	me->equip(tmp);
-	tmp = tmp->clone();
-	me->equip(tmp);
+	tmp = mat->createMateria("ice");
+	x->equip(tmp);
+	tmp = mat->createMateria("cure");
+	x->equip(tmp);
+	tmp = mat->createMateria("cure");
+	x->equip(tmp);
+	tmp = mat->createMateria("ice");
+	x->equip(tmp);
+	tmp = mat->createMateria("ice");
+	x->equip(tmp);
+	tmp = mat->createMateria("cure");
+	x->equip(tmp);
+	tmp = mat->createMateria("cure");
+	x->equip(tmp);
+	tmp1 = tmp->clone();
+	x->equip(tmp1);
 	
-	me->use(0, *bob);
-	me->use(1, *bob);
-	me->use(2, *bob);
-	me->use(3, *bob);
-	me->use(4, *bob);
+	x->use(0, *y);
+	x->use(1, *y);
+	x->use(2, *y);
+	x->use(3, *y);
+	x->use(4, *y);
 		
-	me->unequip(-1);
-	me->unequip(0);
-	me->unequip(1);
+	x->unequip(-1);
+	x->unequip(0);
+	x->use(0, *y);
+	tmp = mat->createMateria("cure");
+	x->equip(tmp);
+	x->use(0, *y);
+	x->unequip(1);
 	
-	delete me;
-	delete bob;
-	delete src;
-	return 0;
+	delete y;
+	delete x;
+	delete mat;
 }

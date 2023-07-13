@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:30:41 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 11:30:51 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 16:02:48 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 
 MateriaSource::MateriaSource() : IMateriaSource()
 {
-	std::cout << "\e[0;33mDefault Constructor called of MateriaSource\e[0m" << std::endl;
+	std::cout << "Default Constructor called of MateriaSource" << std::endl;
 	for (int i = 0; i < 4; i++)
 		_storage[i] = NULL;
 }
@@ -24,13 +24,13 @@ MateriaSource::MateriaSource() : IMateriaSource()
 MateriaSource::MateriaSource(const MateriaSource &copy) : IMateriaSource(copy)
 {
 	(void) copy;
-	std::cout << "\e[0;33mCopy Constructor called of MateriaSource\e[0m" << std::endl;
+	std::cout << "Copy Constructor called of MateriaSource" << std::endl;
 }
 
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "\e[0;31mDestructor called of MateriaSource\e[0m" << std::endl;
+	std::cout << "Destructor called of MateriaSource" << std::endl;
 	for (int i = 0; i < 4; i++)
 		if (_storage[i])
 			delete _storage[i];

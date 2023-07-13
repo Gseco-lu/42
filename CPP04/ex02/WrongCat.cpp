@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:03:36 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 10:39:54 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:27:48 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongCat::WrongCat(void) : WrongAnimal()
 {
-	this->type = "Unknown";
+	this->type = "Unknown WrongCat";
 	std::cout << "[WrongCat Default constructor " << this->type << "]" << std::endl;
 }
 
@@ -38,13 +38,13 @@ WrongCat::WrongCat(WrongCat const &C) : WrongAnimal(C.type)
 WrongCat &WrongCat::operator =(WrongCat const &C)
 {
 	this->type = C.type;
-	std::cout << "[WrongCat called " << this->type << "]" << std::endl;
+	std::cout << "[WrongCat copy called " << this->type << "]" << std::endl;
 	return *this;
 }
 
 void WrongCat::makeSound() const
 {
-	std::cout << "WRONG MEOW MEOW" << std::endl;
+	std::cout << "Wrong Miau" << std::endl;
 }
 
 std::string WrongCat::getType() const

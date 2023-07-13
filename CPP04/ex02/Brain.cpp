@@ -14,20 +14,20 @@
 
 Brain::Brain()
 {
-	std::cout << "\e[0;33mDefault Constructor called of Brain\e[0m" << std::endl;
+	std::cout << "Default Constructor called of Brain" << std::endl;
 }
 
 Brain::Brain(const Brain &copy)
 {
 	for (int i =0; i < 100; i++)
 		this->ideas[i] = copy.ideas[i];
-	std::cout << "\e[0;33mCopy Constructor called of Brain\e[0m" << std::endl;
+	std::cout << "Copy Constructor called of Brain" << std::endl;
 }
 
 
 Brain::~Brain()
 {
-	std::cout << "\e[0;31mDestructor called of Brain\e[0m" << std::endl;
+	std::cout << "Destructor called of Brain" << std::endl;
 }
 
 

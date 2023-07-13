@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 10:02:07 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 10:02:08 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 15:28:23 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ public:
 	virtual ~WrongAnimal();
 	WrongAnimal &operator=(WrongAnimal const &A);
 
-	void	makeSound() const;
+	void makeSound() const;
 	std::string getType() const;
 };
 

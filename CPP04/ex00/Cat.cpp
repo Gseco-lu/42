@@ -14,7 +14,7 @@
 
 Cat::Cat(void) : Animal()
 {
-	this->type = "Unknown";
+	this->type = "Unknown Cat";
 	std::cout << "[Cat Default constructor " << this->type << "]" << std::endl;
 }
 
@@ -44,7 +44,7 @@ Cat &Cat::operator =(Cat const &C)
 
 void Cat::makeSound() const
 {
-	std::cout << this->type << ": Meow Meow " << std::endl;
+	std::cout << this->type << ": Miau " << std::endl;
 }
 
 std::string Cat::getType() const

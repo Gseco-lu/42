@@ -14,7 +14,7 @@
 
 WrongCat::WrongCat(void) : WrongAnimal()
 {
-	this->type = "Unknown";
+	this->type = "Unknown WrongCat";
 	std::cout << "[WrongCat Default constructor " << this->type << "]" << std::endl;
 }
 
@@ -44,7 +44,7 @@ WrongCat &WrongCat::operator =(WrongCat const &C)
 
 void WrongCat::makeSound() const
 {
-	std::cout << "WRONG MEOW MEOW" << std::endl;
+	std::cout << "WRONG Miau" << std::endl;
 }
 
 std::string WrongCat::getType() const

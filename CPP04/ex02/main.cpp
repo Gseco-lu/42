@@ -15,18 +15,16 @@
 
 int main()
 {
-	//AAnimal *x = new AAnimal;
+	//AAnimal *q = new AAnimal();
 	AAnimal *x = new Dog;
 	Cat y("cat");
 	Dog z("dog");
 
-	x->getType();
+	std::cout << x->getType() << " " << std::endl;
 	x->makeSound();
-	
-	y.getType();
+	std::cout << y.getType() << " " << std::endl;
 	y.makeSound();
-
-	z.getType();
+	std::cout << z.getType() << " " << std::endl;
 	z.makeSound();
 
 	delete x;

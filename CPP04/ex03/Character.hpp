@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:23:27 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 11:23:51 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/13 16:11:10 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ class Character : public ICharacter
 
 	private:
 		std::string _name;
-		AMateria *_inventory[4];
-		std::list <AMateria *> floor;
+		AMateria *inventory[4];
+		std::list <AMateria *> dontuse;
 };
 
 #endif

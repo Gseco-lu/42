@@ -36,6 +36,6 @@ AAnimal::~AAnimal()
 AAnimal &AAnimal::operator=(AAnimal const &A)
 {
 	this->type = A.type;
-	std::cout << "[animal AO " << this->type << "]" << std::endl;	
+	std::cout << "[animal copy called " << this->type << "]" << std::endl;	
 	return *this;
 }

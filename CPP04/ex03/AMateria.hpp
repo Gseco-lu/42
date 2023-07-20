@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:22:06 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/12 11:22:07 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:28:18 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,11 @@ class AMateria
 	protected:
 		std::string _type;
 		AMateria();
-		AMateria(std::string const & type);
+		
 		AMateria(const AMateria &copy);
 	
 	public:
+		AMateria(std::string const & type);
 		virtual ~AMateria();
 		AMateria & operator=(const AMateria &assign);
 		

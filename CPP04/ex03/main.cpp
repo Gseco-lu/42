@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/12 11:32:06 by gseco-lu          #+#    #+#             */
-/*   Updated: 2023/07/13 16:20:35 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2023/07/20 12:27:46 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,6 @@ int main()
 	
 	mat->learnMateria(new Ice());
 	mat->learnMateria(new Cure());
-	//src->learnMateria(new Ice());
-	//src->learnMateria(new Cure());
-	// src->learnMateria(new Ice());
-	// src->learnMateria(new Cure());
 
 	tmp = mat->createMateria("ice");
 	x->equip(tmp);

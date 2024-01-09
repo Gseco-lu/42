@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:04:25 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 17:08:40 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,16 +55,16 @@ int Bureaucrat::getGrade() const
 
 std::ostream &operator <<(std::ostream &out, const Bureaucrat &B)
 {
-	out << B.getName() << ", bureaucrat grade " << B.getGrade() << "." << std::endl;
+	out << B.getName() << ", bureaucrat grade " << B.getGrade() << ".";
 	return out;
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw() 
+const char* Bureaucrat::GradeTooLowException::error_type() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw() 
+const char* Bureaucrat::GradeTooHighException::error_type() const throw() 
 {
 	return "Grade is too high";
 }

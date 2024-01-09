@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:21:16 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:21:19 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,15 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (AForm::UnsignedException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	std::cout << "______________________________________" << std::endl;
 	try
@@ -84,14 +84,14 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (AForm::UnsignedException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 }

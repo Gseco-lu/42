@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:50 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:17:54 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ std::ostream &operator<<(std::ostream &out, Form &F)
 	return out;
 }
 
-const char* Form::GradeTooLowException::what() const throw() 
+const char* Form::GradeTooLowException::error_type() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* Form::GradeTooHighException::what() const throw() 
+const char* Form::GradeTooHighException::error_type() const throw() 
 {
 	return "Grade is too high";
 }

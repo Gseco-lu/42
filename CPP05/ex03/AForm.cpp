@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:24:03 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:24:21 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,17 +45,17 @@ AForm & AForm::operator=(const AForm &assign)
 	return *this;
 }
 
-const char* AForm::GradeTooLowException::what() const throw() 
+const char* AForm::GradeTooLowException::error_type() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* AForm::GradeTooHighException::what() const throw() 
+const char* AForm::GradeTooHighException::error_type() const throw() 
 {
 	return "Grade is too high";
 }
 
-const char* AForm::UnsignedException::what() const throw() 
+const char* AForm::UnsignedException::error_type() const throw() 
 {
 	return "Form is not signed";
 }

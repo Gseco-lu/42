@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:14:44 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 17:09:06 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,16 +16,16 @@ int main()
 {
 	try
 	{
-		Bureaucrat a("Al", 19);
+		Bureaucrat a("Al", 20);
 		std::cout << a <<std::endl;
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 
 	try
@@ -35,11 +35,11 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 
 	try
@@ -51,11 +51,11 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	
 	try
@@ -65,11 +65,11 @@ int main()
 	}
 	catch (Bureaucrat::GradeTooLowException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 	catch (Bureaucrat::GradeTooHighException &e)
 	{
-		std::cout << e.what() << std::endl;
+		std::cout << e.error_type() << std::endl;
 	}
 
 }

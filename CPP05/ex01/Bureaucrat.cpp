@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:43 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:17:25 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 18:06:27 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,12 +61,12 @@ std::ostream &operator <<(std::ostream &out, const Bureaucrat &B)
 	return out;
 }
 
-const char* Bureaucrat::GradeTooLowException::what() const throw() 
+const char* Bureaucrat::GradeTooLowException::error_type() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* Bureaucrat::GradeTooHighException::what() const throw() 
+const char* Bureaucrat::GradeTooHighException::error_type() const throw() 
 {
 	return "Grade is too high";
 }
@@ -74,7 +74,7 @@ const char* Bureaucrat::GradeTooHighException::what() const throw()
 void Bureaucrat::decrement()
 {
 	if (_grade == 150)
-		throw GradeTooHighException();
+		throw GradeTooLowException();
 	else
 		_grade++;
 }
@@ -82,7 +82,7 @@ void Bureaucrat::decrement()
 void Bureaucrat::increment()
 {
 	if (_grade == 1)
-		throw GradeTooLowException();
+		throw GradeTooHighException();
 	else
 		_grade--;
 }
@@ -96,7 +96,7 @@ void Bureaucrat::signForm(Form &F)
 	}
 	catch(const Form::GradeTooLowException& e)
 	{
-		std::cerr << e.what() << '\n';
+		std::cerr << e.error_type() << '\n';
 		std::cerr << this->_name << " couldn't sign " << F.getName() \
 		<< " because his grade is not high enough." << std::endl;
 	}

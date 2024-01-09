@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:23:02 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:23:11 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 20:16:28 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void ShrubberyCreationForm::execution() const
 {
 	std::ofstream out((_target + "_shrubbery").c_str());
 	
-	out << "	           ,@@@@@@@," << std::endl;
+	out << "	       ,@@@@@@@," << std::endl;
 	out << "       ,,,.   ,@@@@@@/@@,  .oo8888o." << std::endl;
 	out << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;
 	out << "   ,%&\\%&&%&&%,@@@\\@@@/@@@88\\88888/88'" << std::endl;

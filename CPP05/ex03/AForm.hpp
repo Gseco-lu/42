@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:24:10 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:24:32 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ class AForm
 		virtual ~AForm();
 		class GradeTooHighException : public std::exception	{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* error_type() const throw();
 		};
 		class GradeTooLowException : public std::exception	{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* error_type() const throw();
 		};
 		class UnsignedException : public std::exception	{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* error_type() const throw();
 		};
 
 		virtual void beSigned(Bureaucrat &B);

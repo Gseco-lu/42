@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:53 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:18:03 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:19:37 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,13 @@ class Bureaucrat;
 
 class Form
 {
+	private:
+		Form();
+		std::string const _name;
+		bool _isSigned;
+		int const _signGrade;
+		int const _execGrade;
+	
 	public:
 		Form(std::string name, int signGrade, int execGrade);
 		Form(const Form &copy);
@@ -36,19 +43,14 @@ class Form
 	
 		class GradeTooHighException : public std::exception	{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* error_type() const throw();
 		};
 		class GradeTooLowException : public std::exception	{
 			public:
-				virtual const char* what() const throw();
+				virtual const char* error_type() const throw();
 		};
 		
-	private:
-		Form();
-		std::string const _name;
-		bool _isSigned;
-		int const _signGrade;
-		int const _execGrade;
+	
 		
 		
 };

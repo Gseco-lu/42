@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:50 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ Form::Form() : _name("Default"), _isSigned(false), _signGrade(150), _execGrade(1
 
 Form::Form(std::string name, int signGrade, int execGrade) : _name(name), _isSigned(false), _signGrade(signGrade), _execGrade(execGrade)
 {
-	std::cout << "\e[0;33mDefault Constructor called of Form \e[0m" << this->_name << std::endl;
 	if (signGrade < 1 || execGrade < 1)
 		throw(Form::GradeTooHighException());
 	else if (signGrade > 150 || execGrade > 150)
 		throw(Form::GradeTooLowException());
+	std::cout << "\e[0;33mDefault Constructor called of Form \e[0m" << this->_name << std::endl;
 }
 
 Form::Form(const Form &copy) : _name(copy.getName()), _isSigned(false), _signGrade(copy.getSignGrade()), _execGrade(copy.getExecGrade())
@@ -54,12 +54,12 @@ std::ostream &operator<<(std::ostream &out, Form &F)
 	return out;
 }
 
-const char* Form::GradeTooLowException::error_type() const throw() 
+const char* Form::GradeTooLowException::what() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* Form::GradeTooHighException::error_type() const throw() 
+const char* Form::GradeTooHighException::what() const throw() 
 {
 	return "Grade is too high";
 }

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:43 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 18:06:27 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(c
 }
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "\e[0;33mParameter Constructor called of Bureaucrat \e[0m" << this->_name << std::endl;
 	if (grade < 1)
 		throw(GradeTooHighException());
 	else if (grade > 150)
 		throw(GradeTooLowException());
 	else
 		this->_grade = grade;
+	std::cout << "\e[0;33mParameter Constructor called of Bureaucrat \e[0m" << this->_name << std::endl;
 }
 
 Bureaucrat::~Bureaucrat()
@@ -61,12 +61,12 @@ std::ostream &operator <<(std::ostream &out, const Bureaucrat &B)
 	return out;
 }
 
-const char* Bureaucrat::GradeTooLowException::error_type() const throw() 
+const char* Bureaucrat::GradeTooLowException::what() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* Bureaucrat::GradeTooHighException::error_type() const throw() 
+const char* Bureaucrat::GradeTooHighException::what() const throw() 
 {
 	return "Grade is too high";
 }
@@ -96,9 +96,8 @@ void Bureaucrat::signForm(Form &F)
 	}
 	catch(const Form::GradeTooLowException& e)
 	{
-		std::cerr << e.error_type() << '\n';
-		std::cerr << this->_name << " couldn't sign " << F.getName() \
-		<< " because his grade is not high enough." << std::endl;
+		std::cerr << e.what() << '\n';
+		std::cerr << this->_name << " couldn't sign " << F.getName() << " because his grade is not high enough." << std::endl;
 	}
 	
 }

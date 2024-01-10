@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:56 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:27:35 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:29:40 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,13 @@ int main()
 		Bureaucrat a("Al", 19);
 		std::cout << a <<std::endl;
 		Form f("El", 32, 46);
-		// Form f1("Anti-Vaxxers", 0, 46);
 		std::cout << f << std::endl;
 		a.signForm(f);
 		std::cout << f << std::endl;
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Form::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	
 	try
@@ -50,21 +37,9 @@ int main()
 		a.signForm(f);
 		std::cout << f << std::endl;
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Form::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try
@@ -76,20 +51,8 @@ int main()
 		a.signForm(f);
 		std::cout << f << std::endl;
 	}
-	catch (Form::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Form::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooLowException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }

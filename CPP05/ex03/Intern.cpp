@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:25:37 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:25:54 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:16:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
-// Constructors
 Intern::Intern()
 {
 	std::cout << "\e[0;33mDefault Constructor called of Intern\e[0m" << std::endl;
@@ -27,14 +26,11 @@ Intern::Intern(const Intern &copy)
 	std::cout << "\e[0;33mCopy Constructor called of Intern\e[0m" << std::endl;
 }
 
-// Destructor
 Intern::~Intern()
 {
 	std::cout << "\e[0;31mDestructor called of Intern\e[0m" << std::endl;
 }
 
-
-// Operators
 Intern & Intern::operator=(const Intern &assign)
 {
 	(void)assign;

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:24:03 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ AForm::AForm() : _name("Default"), _isSigned(false), _signGrade(1), _execGrade(1
 AForm::AForm(std::string name, int signGrade, int execGrade) : _name(name), _isSigned(false), \
 _signGrade(signGrade), _execGrade(execGrade)
 {
-	std::cout << "\e[0;33mDefault Constructor called of Form \e[0m" << this->_name << std::endl;
 	if (signGrade < 1 || execGrade < 1)
 		throw(AForm::GradeTooHighException());
 	else if (signGrade > 150 || execGrade > 150)
 		throw(AForm::GradeTooLowException());
+	std::cout << "\e[0;33mDefault Constructor called of Form \e[0m" << this->_name << std::endl;
 }
 AForm::AForm(const AForm &copy) : _name(copy.getName()), _isSigned(copy.getSignBool()), _signGrade(copy.getSignGrade()), _execGrade(copy.getExecGrade())
 {
@@ -45,17 +45,17 @@ AForm & AForm::operator=(const AForm &assign)
 	return *this;
 }
 
-const char* AForm::GradeTooLowException::error_type() const throw() 
+const char* AForm::GradeTooLowException::what() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* AForm::GradeTooHighException::error_type() const throw() 
+const char* AForm::GradeTooHighException::what() const throw() 
 {
 	return "Grade is too high";
 }
 
-const char* AForm::UnsignedException::error_type() const throw() 
+const char* AForm::UnsignedException::what() const throw() 
 {
 	return "Form is not signed";
 }
@@ -77,7 +77,7 @@ void AForm::beSigned(Bureaucrat &B)
 		this->_isSigned = true;
 }
 
-void AForm::execute(Bureaucrat const & executor) const
+void AForm::execute(Bureaucrat const &executor) const
 {
 	if (executor.getGrade() > this->getExecGrade())
 		throw AForm::GradeTooLowException();

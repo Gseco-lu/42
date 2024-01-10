@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:47 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:26:38 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class Form;
 class Bureaucrat
 {
 	private:
-		Bureaucrat();
 		const std::string _name;
 		int _grade;
 		
 	public:
+		Bureaucrat();
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat(std::string name, int grade);
 		~Bureaucrat();
@@ -38,11 +38,11 @@ class Bureaucrat
 
 		class GradeTooHighException : public std::exception	{
 			public:
-				virtual const char* error_type() const throw();
+				virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception	{
 			public:
-				virtual const char* error_type() const throw();
+				virtual const char* what() const throw();
 		};
 		
 		void increment();

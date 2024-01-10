@@ -6,13 +6,13 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:27:52 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:28:00 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:09:34 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-// Constructors
+
 RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), _target(target)
 {
 	std::cout << "\e[0;33mDefault Constructor called of RobotomyRequestForm\e[0m" << std::endl;
@@ -23,15 +23,11 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &copy) : AFor
 	std::cout << "\e[0;33mCopy Constructor called of RobotomyRequestForm\e[0m" << std::endl;
 }
 
-
-// Destructor
 RobotomyRequestForm::~RobotomyRequestForm()
 {
 	std::cout << "\e[0;31mDestructor called of RobotomyRequestForm\e[0m" << std::endl;
 }
 
-
-// Operators
 RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &assign)
 {
 	this->_target = assign.getTarget();
@@ -40,7 +36,7 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(const RobotomyRequestForm &
 
 void RobotomyRequestForm::execution() const
 {
-	static int i;
+	int i = rand();
 	std::string strs[2] = {"\e[0;34m has been robotomized.\e[0m", "\e[0;36m's robotomy has failed.\e[0m"};
 
 	std::cout << "*DRILLING NOISES* " << _target;

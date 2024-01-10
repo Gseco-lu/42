@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:20:12 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ std::ostream &operator <<(std::ostream &out, const Bureaucrat &B)
 	return out;
 }
 
-const char* Bureaucrat::GradeTooLowException::error_type() const throw() 
+const char* Bureaucrat::GradeTooLowException::what() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* Bureaucrat::GradeTooHighException::error_type() const throw() 
+const char* Bureaucrat::GradeTooHighException::what() const throw() 
 {
 	return "Grade is too high";
 }
@@ -115,11 +115,11 @@ void Bureaucrat::executeForm(AForm const & form)
 	catch (AForm::GradeTooLowException &e)
 	{
 		std::cout << this->_name << "\e[0;31m could not execute form " << form.getName() << " because: \e[0m";
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	catch (AForm::UnsignedException &e)
 	{
 		std::cout << this->_name << "\e[0;31m could not execute form " << form.getName() << " because: \e[0m";
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }

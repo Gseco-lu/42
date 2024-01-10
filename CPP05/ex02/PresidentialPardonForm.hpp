@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:21:50 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:22:08 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:02:05 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,11 @@
 
 class PresidentialPardonForm : public AForm
 {
+	private:
+		PresidentialPardonForm();
+		PresidentialPardonForm & operator=(const PresidentialPardonForm &assign);
+		std::string _target;
+
 	public:
 		PresidentialPardonForm(std::string target);
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
@@ -28,10 +33,6 @@ class PresidentialPardonForm : public AForm
 	protected:
 		void execution() const;
 
-	private:
-		PresidentialPardonForm();
-		PresidentialPardonForm & operator=(const PresidentialPardonForm &assign);
-		std::string _target;
 		
 };
 

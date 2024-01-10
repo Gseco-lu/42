@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:26:14 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:26:16 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:15:15 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,31 +15,31 @@
 
 int main()
 {
-		Intern Jeff;
+		Intern J;
 		AForm *form;
 		{
-			Bureaucrat Bob("Bob", 6);
-			form = Jeff.makeForm("robotomy request", "Shrek");
+			Bureaucrat B("B", 6);
+			form = J.makeForm("robotomy request", "SSSS");
 			std::cout << *form << std::endl;
-			Bob.signForm(*form);
-			Bob.executeForm(*form);
+			B.signForm(*form);
+			B.executeForm(*form);
 			delete form;
 		}
 		{
-			form = Jeff.makeForm("shrubbery creation", "Fiona");
-			std::cout << *form << std::endl;
-			delete form;
-		}
-		{
-			form = Jeff.makeForm("presidential pardon", "Donkey");
+			form = J.makeForm("shrubbery creation", "FFFFF");
 			std::cout << *form << std::endl;
 			delete form;
 		}
 		{
-			form = Jeff.makeForm("afsdfafd", "Dragon");
+			form = J.makeForm("presidential pardon", "DDDD");
+			std::cout << *form << std::endl;
+			delete form;
 		}
 		{
-			form = Jeff.makeForm("", "Pinnocchio");
+			form = J.makeForm("afsdfafd", "QQQ");
+		}
+		{
+			form = J.makeForm("", "PPP");
 		}
 		
 }

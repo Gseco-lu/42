@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:19:28 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,18 +21,25 @@ class Bureaucrat;
 
 class AForm
 {
+	private:
+		AForm();
+		std::string const _name;
+		bool _isSigned;
+		int const _signGrade;
+		int const _execGrade;
+		
 	public:
 		class GradeTooHighException : public std::exception	{
 			public:
-				virtual const char* error_type() const throw();
+				virtual const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception	{
 			public:
-				virtual const char* error_type() const throw();
+				virtual const char* what() const throw();
 		};
 		class UnsignedException : public std::exception	{
 			public:
-				virtual const char* error_type() const throw();
+				virtual const char* what() const throw();
 		};
 
 		virtual void beSigned(Bureaucrat &B);
@@ -49,15 +56,6 @@ class AForm
 		AForm & operator=(const AForm &assign);
 		virtual ~AForm();
 		virtual void execution() const = 0;
-		
-		
-		
-	private:
-		AForm();
-		std::string const _name;
-		bool _isSigned;
-		int const _signGrade;
-		int const _execGrade;
 };
 
 std::ostream & operator<<(std::ostream &out, AForm &F);

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:21:16 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:30:57 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main()
 {
 	try
 	{
-		Bureaucrat a("Arnold", 19);
-		Bureaucrat b("Ben", 138);
-		ShrubberyCreationForm S("Cowabunga");
+		Bureaucrat a("Ary", 19);
+		Bureaucrat b("Bert", 138);
+		ShrubberyCreationForm S("CCCCCCCC");
 	
 		std::cout << a <<std::endl;
 		std::cout << b <<std::endl;
@@ -35,25 +35,17 @@ int main()
 		b.executeForm(S);
 		a.executeForm(S);
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (AForm::UnsignedException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	std::cout << "______________________________________" << std::endl;
 	try
 	{
-		Bureaucrat c("Cronix", 46);
-		Bureaucrat d("Darius", 3);
-		RobotomyRequestForm R("Shrek");
-		PresidentialPardonForm P("Homer Simpson");
+		Bureaucrat c("CCCCCC", 46);
+		Bureaucrat d("DDDDDDD", 3);
+		RobotomyRequestForm R("SSSSSSS");
+		PresidentialPardonForm P("HHHH");
 		
 		std::cout << c <<std::endl;
 		std::cout << d <<std::endl;
@@ -82,16 +74,8 @@ int main()
 		d.executeForm(R);
 		d.executeForm(P);
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (AForm::UnsignedException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }

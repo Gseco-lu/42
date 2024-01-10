@@ -1,8 +1,13 @@
 CC			= 	g++ -std=c++98
-CFLAGS		= 	-Wall -Wextra -Werror -Wshadow  -g\
-				# -fsanitize=address
+CFLAGS		= 	-Wall -Wextra -Werror -Wshadow  -g #-fsanitize=address
 NAME		= 	form
-SRCS		=	$(wildcard *.cpp)
+SRCS		=	Bureaucrat.cpp\
+				main.cpp\
+				AForm.cpp\
+				PresidentialPardonForm.cpp\
+				RobotomyRequestForm.cpp\
+				ShrubberyCreationForm.cpp\
+				Intern.cpp
 
 all: $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:14:44 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:25:38 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,9 @@ int main()
 		Bureaucrat a("Al", 20);
 		std::cout << a <<std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try
@@ -33,13 +29,9 @@ int main()
 		Bureaucrat a("El", 0);
 		std::cout << a <<std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 
 	try
@@ -49,13 +41,9 @@ int main()
 		a.increment();
 		std::cout << a <<std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
-	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	
 	try
@@ -63,13 +51,8 @@ int main()
 		Bureaucrat a("Cro", 4235225);
 		std::cout << a <<std::endl;
 	}
-	catch (Bureaucrat::GradeTooLowException &e)
+	catch (std::exception &e)
 	{
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException &e)
-	{
-		std::cout << e.error_type() << std::endl;
-	}
-
 }

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:29:06 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/02 16:29:07 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:23:01 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,17 @@
 
 class ShrubberyCreationForm : public AForm
 {
+	private:
+		ShrubberyCreationForm();
+		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &assign);
+		std::string _target;
+		
 	public:
 		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		~ShrubberyCreationForm();
 		std::string getTarget() const;
-
-	protected:
 		virtual void execution() const;
-
-	private:
-		ShrubberyCreationForm();
-		ShrubberyCreationForm & operator=(const ShrubberyCreationForm &assign);
-		std::string _target;
 		
 };
 

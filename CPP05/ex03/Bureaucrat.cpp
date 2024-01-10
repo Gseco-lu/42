@@ -6,13 +6,12 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:24:53 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 
-// Constructors
 Bureaucrat::Bureaucrat()
 {
 	std::cout << "\e[0;33mDefault Constructor called of Bureaucrat\e[0m" << std::endl;
@@ -24,23 +23,21 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(c
 }
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
 {
-	std::cout << "\e[0;33mParameter Constructor called of Bureaucrat \e[0m" << this->_name << std::endl;
 	if (grade < 1)
 		throw(GradeTooHighException());
 	else if (grade > 150)
 		throw(GradeTooLowException());
 	else
 		this->_grade = grade;
+	std::cout << "\e[0;33mParameter Constructor called of Bureaucrat \e[0m" << this->_name << std::endl;
 }
 
-// Destructor
 Bureaucrat::~Bureaucrat()
 {
 	std::cout << "\e[0;31mDestructor called of Bureaucrat\e[0m" << std::endl;
 }
 
 
-// Operators
 Bureaucrat & Bureaucrat::operator=(const Bureaucrat &assign)
 {
 	_grade = assign.getGrade();
@@ -64,12 +61,12 @@ std::ostream &operator <<(std::ostream &out, const Bureaucrat &B)
 	return out;
 }
 
-const char* Bureaucrat::GradeTooLowException::error_type() const throw() 
+const char* Bureaucrat::GradeTooLowException::what() const throw() 
 {
 	return "Grade is too low";
 }
 
-const char* Bureaucrat::GradeTooHighException::error_type() const throw() 
+const char* Bureaucrat::GradeTooHighException::what() const throw() 
 {
 	return "Grade is too high";
 }
@@ -115,11 +112,11 @@ void Bureaucrat::executeForm(AForm const & form)
 	catch (AForm::GradeTooLowException &e)
 	{
 		std::cout << this->_name << "\e[0;31m could not execute form " << form.getName() << " because: \e[0m";
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 	catch (AForm::UnsignedException &e)
 	{
 		std::cout << this->_name << "\e[0;31m could not execute form " << form.getName() << " because: \e[0m";
-		std::cout << e.error_type() << std::endl;
+		std::cout << e.what() << std::endl;
 	}
 }

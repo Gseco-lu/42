@@ -6,14 +6,14 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:23:02 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 20:16:28 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 16:08:04 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 #include <fstream>
 
-// Constructors
+
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
 	std::cout << "\e[0;33mDefault Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
@@ -24,15 +24,11 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) 
 	std::cout << "\e[0;33mCopy Constructor called of ShrubberyCreationForm\e[0m" << std::endl;
 }
 
-
-// Destructor
 ShrubberyCreationForm::~ShrubberyCreationForm()
 {
 	std::cout << "\e[0;31mDestructor called of ShrubberyCreationForm\e[0m" << std::endl;
 }
 
-
-// Operators
 ShrubberyCreationForm & ShrubberyCreationForm::operator=(const ShrubberyCreationForm &assign)
 {
 	this->_target = assign.getTarget();

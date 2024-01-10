@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:04:25 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/09 16:02:57 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/10 17:24:16 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,16 @@ Bureaucrat::Bureaucrat() : _name("Default"), _grade(150)
 
 Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name), _grade(grade)
 {
-    std::cout << "\e[0;33mParameter Constructor called of Bureaucrat \e[0m" << this->_name << std::endl;
+   
     if (grade < 1)
+	{
         throw(GradeTooHighException());
+	}
     else if (grade > 150)
-        throw(GradeTooLowException());
+	{
+        throw(GradeTooLowException()); 
+	}
+	std::cout << "\e[0;33mParameter Constructor called of Bureaucrat \e[0m" << this->_name << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())
@@ -59,14 +64,14 @@ std::ostream &operator <<(std::ostream &out, const Bureaucrat &B)
 	return out;
 }
 
-const char* Bureaucrat::GradeTooLowException::error_type() const throw() 
+const char* Bureaucrat::GradeTooLowException::what() const throw() 
 {
-	return "Grade is too low";
+	return ("Grade is too low");
 }
 
-const char* Bureaucrat::GradeTooHighException::error_type() const throw() 
+const char* Bureaucrat::GradeTooHighException::what() const throw() 
 {
-	return "Grade is too high";
+	return ("Grade is too high");
 }
 
 void Bureaucrat::decrement()

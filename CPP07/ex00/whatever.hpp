@@ -1,34 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   whatever.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:25:46 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 13:38:00 by gseco-lu         ###   ########.fr       */
+/*   Created: 2024/01/12 14:15:37 by gseco-lu          #+#    #+#             */
+/*   Updated: 2024/01/12 14:16:40 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#ifndef WHATEVER_HPP
+# define WHATEVER_HPP
 
 # include <iostream>
 # include <string>
-# include "AForm.hpp"
 
-class Intern
+template <typename T> void swap(T &x, T &y)
 {
-	public:
-		Intern();
-		Intern(const Intern &copy);
-		~Intern();
-		
-		AForm *makePresidentialPardonForm(std::string target);
-		AForm *makeRobotomyRequestForm(std::string target);
-		AForm *makeShrubberyCreationForm(std::string target);
-		Intern & operator=(const Intern &assign);
-		AForm* makeForm(std::string const form, std::string const target);
-};
+	T tmp = x;
+	x = y;
+	y = tmp;
+}
+
+template <typename T> T const & min(T const &x, T const &y)
+{
+	return (x < y) ? x : y;
+}
+
+template <typename T> T const & max(T const &x, T const &y)
+{
+	return (x > y) ? x : y;
+}
 
 #endif

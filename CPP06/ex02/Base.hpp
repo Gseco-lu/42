@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:25:46 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 13:38:00 by gseco-lu         ###   ########.fr       */
+/*   Created: 2024/01/12 14:11:11 by gseco-lu          #+#    #+#             */
+/*   Updated: 2024/01/12 14:11:33 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#ifndef BASE_HPP
+# define BASE_HPP
 
 # include <iostream>
 # include <string>
-# include "AForm.hpp"
+# include "Base.hpp"
 
-class Intern
+class A;
+class B;
+class C;
+class Base
 {
 	public:
-		Intern();
-		Intern(const Intern &copy);
-		~Intern();
+		virtual ~Base();
+		Base & operator=(const Base &assign);
+		Base *generate(void);
+		void identify(Base* p);
+		void identify(Base& p);
+
 		
-		AForm *makePresidentialPardonForm(std::string target);
-		AForm *makeRobotomyRequestForm(std::string target);
-		AForm *makeShrubberyCreationForm(std::string target);
-		Intern & operator=(const Intern &assign);
-		AForm* makeForm(std::string const form, std::string const target);
 };
+
+class A : public Base {};
+class B : public Base  {};
+class C  : public Base {};
 
 #endif

@@ -1,34 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*   MutantStack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/02 16:25:46 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 13:38:00 by gseco-lu         ###   ########.fr       */
+/*   Created: 2024/01/12 14:24:56 by gseco-lu          #+#    #+#             */
+/*   Updated: 2024/01/12 14:25:05 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef INTERN_HPP
-# define INTERN_HPP
+#ifndef MUTANTSTACK_HPP
+# define MUTANTSTACK_HPP
 
 # include <iostream>
-# include <string>
-# include "AForm.hpp"
+# include <stack>
+# include <deque>
 
-class Intern
+template <typename T>
+class MutantStack : public std::stack<T>
 {
 	public:
-		Intern();
-		Intern(const Intern &copy);
-		~Intern();
-		
-		AForm *makePresidentialPardonForm(std::string target);
-		AForm *makeRobotomyRequestForm(std::string target);
-		AForm *makeShrubberyCreationForm(std::string target);
-		Intern & operator=(const Intern &assign);
-		AForm* makeForm(std::string const form, std::string const target);
+		MutantStack() : std::stack<T>() {}
+		MutantStack(const MutantStack &copy) : std::stack<T>(copy) {}
+		~MutantStack() {}
+		typedef typename std::deque<T>::iterator iterator;
+
+		iterator begin() {
+			return this->c.begin();
+		}
+
+		iterator end() {
+			return this->c.end();
+		}
+			
 };
 
 #endif

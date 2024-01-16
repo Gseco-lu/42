@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:20:54 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:18:29 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ class AForm;
 class Bureaucrat
 {
 	private:
-		Bureaucrat();
 		const std::string _name;
 		int _grade;
 		
 	public:
+		Bureaucrat();
 		Bureaucrat(const Bureaucrat &copy);
 		Bureaucrat(std::string name, int grade);
 		~Bureaucrat();

@@ -1,11 +1,11 @@
-NAME = typeinfo
+NAME = info
 
 SRCS = Base.cpp\
 		main.cpp
 
-CC = c++ -std=c++98
+CC = g++ -std=c++98
 
-CFLAGS = -Wall -Wextra -Werror -Wshadow -g
+CFLAGS = -Wall -Wextra -Werror 
 
 all: $(NAME)
 

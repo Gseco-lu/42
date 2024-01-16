@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:00:19 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 16:25:27 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 19:53:24 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,8 +129,8 @@ void ScalarConverter::converter(int literal)
 	else std::cout << "'" << static_cast<char>(literal) << "'" << std::endl;
 	
     std::cout << "int: " << static_cast<int>(literal) << std::endl;
-    std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(literal) << "f" << std::endl;
-    std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(literal) << std::endl;
+    std::cout << "float: " << static_cast<float>(literal) << "f" << std::endl;
+    std::cout << "double: " << static_cast<double>(literal) << std::endl;
 }
 
 void ScalarConverter::converter(float literal)
@@ -145,14 +145,12 @@ void ScalarConverter::converter(float literal)
 		std::cout << static_cast<int>(literal) << std::endl;
 	else std::cout << "impossible" << std::endl;
 	
-    std::cout << "float: "  << std::fixed << std::setprecision(1) << literal;
+    std::cout << "float: " << literal;
 	if (literal - static_cast<long long>(literal) == 0)
 		std::cout << ".0";
 	std::cout << "f" << std::endl;
 	
-    std::cout << "double: " << std::fixed << std::setprecision(1) << static_cast<double>(literal);
-	if (literal - static_cast<long long>(literal) == 0)
-		std::cout << ".0";
+    std::cout << "double: " << static_cast<double>(literal);
 	std::cout << std::endl;
 }
 
@@ -168,14 +166,12 @@ void ScalarConverter::converter(double literal)
 		std::cout << static_cast<int>(literal) << std::endl;
 	else std::cout << "impossible" << std::endl;
 	
-    std::cout << "float: " << std::fixed << std::setprecision(1) << static_cast<float>(literal);
+    std::cout << "float: " << static_cast<float>(literal);
 	if (literal - static_cast<long long>(literal) == 0)
 		std::cout << ".0";
 	std::cout << "f" << std::endl;
 	
-    std::cout << "double: " << std::fixed << std::setprecision(1) << literal;
-	if (literal - static_cast<double>(literal) == 0)
-		std::cout << ".0";
+    std::cout << "double: " << literal;
 	std::cout << std::endl;
 }
 

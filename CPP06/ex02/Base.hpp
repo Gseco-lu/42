@@ -6,34 +6,24 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:11:11 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:11:33 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:38:09 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef DATA_HPP
+# define DATA_HPP
 
-# include <iostream>
-# include <string>
-# include "Base.hpp"
+#include <string>
+#include <iostream>
 
-class A;
-class B;
-class C;
 class Base
 {
-	public:
-		virtual ~Base();
-		Base & operator=(const Base &assign);
-		Base *generate(void);
-		void identify(Base* p);
-		void identify(Base& p);
 
-		
+    public:
+        virtual ~Base();
 };
 
-class A : public Base {};
-class B : public Base  {};
-class C  : public Base {};
-
+Base * generate(void);
+void identify(Base* p);
+void identify(Base& p);
 #endif

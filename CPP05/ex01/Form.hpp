@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:16:53 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 15:25:04 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ class Bureaucrat;
 class Form
 {
 	private:
-		Form();
 		std::string const _name;
 		bool _isSigned;
 		int const _signGrade;
 		int const _execGrade;
 	
 	public:
+		Form();
 		Form(std::string name, int signGrade, int execGrade);
 		Form(const Form &copy);
 		~Form();

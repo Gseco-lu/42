@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:19:28 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/10 17:27:03 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:24:19 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ class Bureaucrat;
 class AForm
 {
 	private:
-		AForm();
 		std::string const _name;
 		bool _isSigned;
 		int const _signGrade;
@@ -42,15 +41,13 @@ class AForm
 				virtual const char* what() const throw();
 		};
 
+		AForm();
 		virtual void beSigned(Bureaucrat &B);
 		virtual std::string getName() const;
 		virtual bool getSignBool() const;
 		virtual int getSignGrade() const;
 		virtual int getExecGrade() const;
 		void execute(Bureaucrat const & executor) const;
-		void CatchExceptions(Bureaucrat const &) const;
-	
-	protected:
 		AForm(std::string name, int signGrade, int execGrade);
 		AForm(const AForm &copy);
 		AForm & operator=(const AForm &assign);

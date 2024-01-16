@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:23:38 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/10 16:08:20 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 15:37:47 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class ShrubberyCreationForm : public AForm
 		ShrubberyCreationForm(const ShrubberyCreationForm &copy);
 		~ShrubberyCreationForm();
 		std::string getTarget() const;
-
-	protected:
 		virtual void execution() const;
 
 		

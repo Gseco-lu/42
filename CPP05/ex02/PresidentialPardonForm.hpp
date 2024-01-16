@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:21:50 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/10 16:02:05 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 15:37:59 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,6 @@ class PresidentialPardonForm : public AForm
 		PresidentialPardonForm(const PresidentialPardonForm &copy);
 		~PresidentialPardonForm();
 		std::string getTarget() const;
-
-	protected:
 		void execution() const;
 
 		

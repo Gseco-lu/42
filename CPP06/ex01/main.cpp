@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:08:46 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:09:00 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:01:03 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int main ()
 {
 	Data *data = new Data;
 	data->n = 423;
-	data->s1 = "Badgelgeh";
+	data->s1 = "Badgt";
 	
 	uintptr_t raw = Serializer::serialize(data);
 	

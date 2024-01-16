@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:24:10 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 13:41:01 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:25:56 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,6 @@ class AForm
 		virtual int getSignGrade() const;
 		virtual int getExecGrade() const;
 		void execute(Bureaucrat const & executor) const;
-		void CatchExceptions(Bureaucrat const &) const;
-
 		AForm(std::string name, int signGrade, int execGrade);
 		AForm(const AForm &copy);
 		AForm & operator=(const AForm &assign);

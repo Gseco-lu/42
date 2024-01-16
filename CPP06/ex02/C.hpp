@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/12 13:59:37 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/16 19:15:48 by gseco-lu         ###   ########.fr       */
+/*   Created: 2024/01/16 20:21:32 by gseco-lu          #+#    #+#             */
+/*   Updated: 2024/01/16 20:32:10 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScalarConverter.hpp"
+#ifndef C_HPP
+# define C_HPP
 
-int main(int argc, char **argv)
+#include "Base.hpp"
+
+class C: public Base
 {
-	if (argc != 2)
-	{
-		std::cout << "Invalid number of args" << std::endl;
-		return 1;
-	}
-	ScalarConverter::convert(argv[1]);
-	return 0;
-}
+
+
+};
+
+#endif

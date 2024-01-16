@@ -1,11 +1,12 @@
+CC = g++ 
+
+CFLAGS = -Wall -Wextra -Werror -std=c++98
+
 NAME = convert
 
 SRCS = ScalarConverter.cpp\
 		main.cpp
 
-CC = c++ -std=c++98
-
-CFLAGS = -Wall -Wextra -Werror -Wshadow -g
 
 all: $(NAME)
 

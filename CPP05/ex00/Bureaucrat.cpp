@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 16:04:25 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/10 17:24:16 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 16:16:12 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ std::string Bureaucrat::getName() const
 {
 	return this->_name;
 }
-
+	
 int Bureaucrat::getGrade() const
 {
 	return this->_grade;

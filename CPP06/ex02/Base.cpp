@@ -6,11 +6,14 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:10:55 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 15:29:33 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:30:19 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 #include <cmath>
 #include <ctime>
 
@@ -72,7 +75,7 @@ void identify(Base& p)
 			}
 			catch(const std::exception& e)
 			{
-				std::cout << "ERROR: identify point indefinite!" << '\n';
+				std::cout << "ERROR: not indentified!" << '\n';
 			}	
 		}
 	}

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:01:10 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 16:15:01 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/16 20:01:49 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,16 +23,8 @@
 # include <ctype.h>
 
 
-
 class ScalarConverter
 {
-	public:
-		ScalarConverter();
-		ScalarConverter(const ScalarConverter &copy);
-		~ScalarConverter();
-		ScalarConverter & operator=(const ScalarConverter &assign);
-		static void convert(std::string literal);
-
 	private:
 		static char _c;
 		static int _i;
@@ -46,6 +38,14 @@ class ScalarConverter
 		static void converter(double literal);
 		static void convertToType(std::string type, std::string literal);
 		static void impossible(void);
+		
+	public:
+		ScalarConverter();
+		ScalarConverter(const ScalarConverter &copy);
+		~ScalarConverter();
+		ScalarConverter & operator=(const ScalarConverter &assign);
+		static void convert(std::string literal);
+
 };
 
 #endif

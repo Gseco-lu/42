@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:18:42 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:38:29 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/23 20:15:23 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <vector>
 
 template <typename T>
 class Array

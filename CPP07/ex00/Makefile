@@ -2,7 +2,7 @@ NAME = template
 
 SRCS = main.cpp
 
-CC = c++ -std=c++98 -Wall -Wextra -Werror -Wshadow
+CC = c++ -std=c++98 -Wall -Wextra -Werror 
 
 all: $(NAME)
 

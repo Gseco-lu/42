@@ -6,14 +6,13 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:11:11 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/16 20:38:09 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:55:21 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DATA_HPP
 # define DATA_HPP
 
-#include <string>
 #include <iostream>
 
 class Base

@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:10:55 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/16 20:30:19 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/17 14:22:33 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void identify(Base* p)
 	else if (dynamic_cast<C *>(p))
 		std::cout << "TypeObjec: C" << '\n';
 	else 
-		std::cout << "ERROR: identify indefinite!" << '\n';
+		std::cout << "ERROR: unidentified!" << '\n';
 }
 
 void identify(Base& p)

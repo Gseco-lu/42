@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:17:20 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:17:42 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:50:44 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 template <typename T>
 void print(T &t)
 {
-	std::cout << t << " ";
+	std::cout << t << " " << std::endl;
 }
 
 template <typename T>

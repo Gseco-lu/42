@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:09:19 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:09:39 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/23 17:31:00 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ typedef struct Data
 
 class Serializer
 {
-	public:
+	private:
 		Serializer();
 		Serializer(const Serializer &copy);
+	public:
 		~Serializer();
 		Serializer & operator=(const Serializer &assign);
 		static uintptr_t serialize(Data* ptr);

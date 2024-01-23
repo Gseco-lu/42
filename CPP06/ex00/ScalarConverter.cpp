@@ -6,16 +6,12 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:00:19 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/16 19:53:24 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/17 15:24:16 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-char ScalarConverter::_c = 0;
-int ScalarConverter::_i = 0;
-float ScalarConverter::_f = 0;
-double ScalarConverter::_d = 0;
 
 ScalarConverter::ScalarConverter()
 {
@@ -86,7 +82,7 @@ std::string ScalarConverter::getType(std::string literal)
 			dif = literal.compare("2147483647");
 		else if (literal [0] == '+' && literal.length() == 11)
 			dif = literal.compare("+2147483647");
-		else if (isdigit(literal [0]) && literal.length() == 11)
+		else if (isdigit(literal [0]) && literal.length() >= 11)
 			return "double";
 		if (dif <= 0) return "int";	
 		else return "double";
@@ -112,7 +108,6 @@ void ScalarConverter::convertToType(std::string type, std::string literal)
 		impossible();
 }
 
-//Overriden functions
 void ScalarConverter::converter(char literal)
 {
 	std::cout << "char: " << "'" << literal << "'" << std::endl;
@@ -129,7 +124,7 @@ void ScalarConverter::converter(int literal)
 	else std::cout << "'" << static_cast<char>(literal) << "'" << std::endl;
 	
     std::cout << "int: " << static_cast<int>(literal) << std::endl;
-    std::cout << "float: " << static_cast<float>(literal) << "f" << std::endl;
+    std::cout << "float: " << static_cast<float>(literal) << ".0f" << std::endl;
     std::cout << "double: " << static_cast<double>(literal) << std::endl;
 }
 
@@ -181,5 +176,4 @@ void ScalarConverter::impossible()
     std::cout << "int: " << "impossible" << std::endl;
     std::cout << "float: " << "nanf" << std::endl;
     std::cout << "double: " << "nan" << std::endl;
-	exit(1);
 }

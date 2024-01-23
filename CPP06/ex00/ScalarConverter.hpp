@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:01:10 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/16 20:01:49 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:57:37 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,18 +18,11 @@
 # include <iomanip> 
 # include <sstream>
 # include <limits>
-# include <stdio.h>
 # include <stdlib.h>
-# include <ctype.h>
-
 
 class ScalarConverter
 {
 	private:
-		static char _c;
-		static int _i;
-		static float _f;
-		static double _d;
 		
 		static std::string getType(std::string literal);
 		static void converter(char literal);
@@ -38,9 +31,9 @@ class ScalarConverter
 		static void converter(double literal);
 		static void convertToType(std::string type, std::string literal);
 		static void impossible(void);
+		ScalarConverter();
 		
 	public:
-		ScalarConverter();
 		ScalarConverter(const ScalarConverter &copy);
 		~ScalarConverter();
 		ScalarConverter & operator=(const ScalarConverter &assign);

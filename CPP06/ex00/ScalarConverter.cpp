@@ -6,16 +6,12 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:00:19 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/16 19:53:24 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:57:30 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
 
-char ScalarConverter::_c = 0;
-int ScalarConverter::_i = 0;
-float ScalarConverter::_f = 0;
-double ScalarConverter::_d = 0;
 
 ScalarConverter::ScalarConverter()
 {
@@ -181,5 +177,4 @@ void ScalarConverter::impossible()
     std::cout << "int: " << "impossible" << std::endl;
     std::cout << "float: " << "nanf" << std::endl;
     std::cout << "double: " << "nan" << std::endl;
-	exit(1);
 }

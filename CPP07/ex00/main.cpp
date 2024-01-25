@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:15:40 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/23 17:48:36 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/24 16:06:01 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int b = 3;
 std::cout << "a = " << a << ", b = " << b << std::endl;
 std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
 std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-std::string c = "chaaddsdine0";
-std::string d = "chaiadsddasne9";
+std::string c = "chaine1";
+std::string d = "chaine2";
 ::swap(c, d);
 std::cout << "c = " << c << ", d = " << d << std::endl;
 std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;

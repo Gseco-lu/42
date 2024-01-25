@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:18:39 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/23 20:23:03 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/24 17:05:50 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ public:
     MyClass() : data (0){}
     MyClass(int value) : data (value){}
     int getData() const { return data; }
-private:
     int data;
 };
 
@@ -107,17 +106,18 @@ int main(void)
     {
        std::cout << "I: " << i << " " << numbers[i] <<  std::endl;
     }
+    Array<int> numbers3;
     try
     {
-        numbers[-2] = 0;
+        numbers3[-2] = 0;
         
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;;
     }
     Array<int> numbers2(10);
-    for (int i = 0; i < MAX_VAL; i++)
+    for (int i = 0; i < 10; i++)
     {
        std::cout << "I: " << i << " " << numbers2[i] <<  std::endl;
     }
@@ -127,7 +127,7 @@ int main(void)
     }
     catch(const std::exception& e)
     {
-        std::cerr << e.what() << '\n';
+        std::cerr << e.what() << std::endl;
     }
     Array<MyClass>complexArray(3);
     complexArray[0] = MyClass(10);
@@ -136,5 +136,6 @@ int main(void)
     std::cout << "0: " << complexArray[0].getData() << std::endl;
     std::cout << "1: " << complexArray[1].getData() << std::endl;
     std::cout << "2: " << complexArray[2].getData() << std::endl;
+    std::cout << "size: " << complexArray.size() << std::endl;
     return 0;
 }

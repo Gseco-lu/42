@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:18:42 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/23 20:15:23 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:33:09 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ class Array
 
 		~Array<T>()
 		{
-			std::cout << "\e[0;31mDestructor called of Array\e[0m" << std::endl;
 			delete [] _arr;
+			std::cout << "\e[0;31mDestructor called of Array\e[0m" << std::endl;
 		}
         
 		Array<T> & operator=(const Array<T> &assign)
@@ -66,13 +66,6 @@ class Array
 			return *this;
 		}
 		
-		T & operator[](unsigned int n)
-		{
-			if (n >= _size)
-				throw std::exception();
-			return _arr[n];
-		}
-
 		T & operator[](unsigned int n) const
 		{
 			if (n >= _size || n < 0)

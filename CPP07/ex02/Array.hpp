@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:18:42 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/25 16:33:09 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:17:31 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,14 @@ class Array
 			}
 			return *this;
 		}
-		
-		T & operator[](unsigned int n) const
+		T & operator[](unsigned int n)
+		{
+			if (n >= _size || n < 0)
+				throw std::exception();
+			return _arr[n];
+		}
+
+		const T & operator[](unsigned int n) const
 		{
 			if (n >= _size || n < 0)
 				throw std::exception();

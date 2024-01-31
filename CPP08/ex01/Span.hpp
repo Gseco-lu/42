@@ -6,36 +6,35 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:23:39 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:23:40 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:33:46 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
+# include <algorithm>
 # include <iostream>
 # include <string>
 # include <vector>
 
 class Span
 {
-    private:
-		Span();
-		std::vector<int> _arr;
-		unsigned int _storage;
-		int _short;
-		void updateShort(int a, int b);
-
+	private:
+		unsigned int _max;
+		unsigned int _size;
+		std::vector<int> _value;
+		int difference(int a, int b);
 	public:
-		Span(unsigned int N);
-		Span(const Span &copy);
+		Span();
+		Span(unsigned int n);
 		~Span();
-		Span & operator=(const Span &assign);
-		void addNumber(int number);
+		void fillArray(int randmax);
+		void addNumber(int n);
 		int shortestSpan();
 		int longestSpan();
-		void fillArray(int N);
-		int &operator[](unsigned int n);
+
+
 };
 
 #endif

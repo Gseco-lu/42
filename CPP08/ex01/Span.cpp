@@ -6,124 +6,77 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:22:37 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:22:39 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:20:31 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
-#include <climits>
-#include <cmath>
 
-// Constructors
-Span::Span() : _storage(0), _short(INT_MAX)
+Span::Span(): _max(0), _size(0)
 {
-	std::cout << "\e[0;33mDefault Constructor called of Span\e[0m" << std::endl;
 }
 
-Span::Span(unsigned int N) : _storage(N), _short(INT_MAX)
+Span::Span(unsigned int n): _max(n), _size(0)
 {
-	std::cout << "\e[0;33mDefault Constructor called of Span\e[0m" << std::endl;
 }
 
-Span::Span(const Span &copy)
-{
-	(void) copy;
-	std::cout << "\e[0;33mCopy Constructor called of Span\e[0m" << std::endl;
-}
-
-
-// Destructor
 Span::~Span()
 {
-	std::cout << "\e[0;31mDestructor called of Span\e[0m" << std::endl;
-}
-
-
-// Operators
-Span & Span::operator=(const Span &assign)
-{
-	(void) assign;
-	return *this;
+    
 }
 
 void Span::fillArray(int randmax)
 {
-	_short = INT_MAX;
-	_arr.clear();
+	_value.clear();
 	srand(time(0));
-	for (unsigned int i = 0; i < _storage; i++)
+	for (unsigned int i = 0; i < _max; i++)
 		addNumber(rand() % randmax);
 }
 
-void Span::updateShort(int a, int b)
+int Span::difference(int a, int b)
 {
-	if ((b - a ) < _short)
-		_short = b - a;
-}
-
-void Span::addNumber(int number)
-{
-	if (_arr.size() == _storage)
-	{
-		std::cout << "Storage is full" << std::endl;
-		throw std::exception();
-	}
-	if (_arr.size() == 0)
-		_arr.push_back(number);
-	else
-	{
-		if (number <= _arr[0])
-		{
-			_arr.insert(_arr.begin(), number);
-			updateShort(number, _arr[1]);
-		}
-		else if (number >= _arr[_arr.size() - 1])
-		{
-			_arr.push_back(number);
-			updateShort(_arr[_arr.size() - 2], number);
-		}
-		else 
-		{
-			for (std::vector<int>::iterator it = _arr.begin(); it != _arr.end(); it++)
-			{
-				if (*it < number && *(it + 1) >= number)
-				{
-					updateShort(number, *(it + 1));
-					updateShort(*it, number);
-					_arr.insert(it + 1, number);
-					break ;
-				}
-			}
-		}
-	}
+    a = a - b;
+    if (a < 0)
+        a = -a;
+    return (a);
 }
 
 int Span::shortestSpan()
 {
-	if (_arr.size() <= 1)
-	{
-		std::cout << "Not enough numbers" << std::endl;
+    if (_value.size() < 2)
 		throw std::exception();
-	}
-	return _short;
+    int dif = __INT_MAX__;
+    int r = 0; 
+    for (unsigned int i = 0; i < _size; i++)
+    {
+        unsigned int j = 0;
+        while (j++ < _size)
+        {
+            if (i == j)
+                continue;
+            r = difference(_value[i], _value[j]);
+            if (r < dif)
+                dif = r;
+        }
+    }
+    return (dif);
 }
+
+
 
 int Span::longestSpan()
 {
-	if (_arr.size() <= 1)
-	{
-		std::cout << "Not enough numbers" << std::endl;
+    if (_value.size() < 2)
 		throw std::exception();
-	}
-	return _arr[_arr.size() - 1] - _arr[0];
+    int min = *std::min_element(_value.begin(), _value.end());
+    int max =  *std::max_element(_value.begin(), _value.end());
+    return (max - min);
 }
 
-int & Span::operator[](unsigned int n)
+void Span::addNumber(int n)
 {
-	if (n >= _arr.size())
-	{
-		std::cout << "Out of range" << std::endl;
-		throw std::exception();
-	}
-	return _arr[n];
+    if (_size >= _max)
+        throw std::exception();
+    _size++;
+    _value.push_back(n);
 }

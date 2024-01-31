@@ -6,24 +6,27 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:23:33 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:23:35 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:16:23 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <iostream>
 #include "Span.hpp"
+#include <list>
 
 int main()
 {
-	Span sp = Span(10);
-	sp.addNumber(3);
-	sp.addNumber(6);
-	sp.addNumber(17);
-	sp.addNumber(9);
-	sp.addNumber(134);
-	sp.fillArray(1000);
-	std::cout << "shortest = " << sp.shortestSpan() << std::endl;
-	std::cout << "longest = " <<  sp.longestSpan() << std::endl;
-	for (int i = 0; i < 10; i++)
-		std::cout << sp[i] << std::endl;
-	return 0;
+    Span sp = Span(5);
+	Span sp1 = Span(10000);
+	sp1.fillArray(10000);
+    sp.addNumber(6);
+    sp.addNumber(3);
+    sp.addNumber(17);
+    sp.addNumber(9);
+    sp.addNumber(11);
+    std::cout << sp.shortestSpan() << std::endl;
+    std::cout << sp.longestSpan() << std::endl;
+	std::cout << sp1.shortestSpan() << std::endl;
+    std::cout << sp1.longestSpan() << std::endl;
+    return 0;
 }

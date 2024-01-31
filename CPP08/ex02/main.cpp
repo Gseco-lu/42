@@ -6,27 +6,28 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:24:37 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:24:47 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:47:05 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
+#include <list>
 
 int main()
 {
-	MutantStack<int> mstack;
-	mstack.push(5);
-	mstack.push(17);
-	std::cout << "top " << mstack.top() << std::endl;
-	mstack.pop();
+	std::list<int> mstack;
+	mstack.push_back(5);
+	mstack.push_back(17);
+	std::cout << "top " << mstack.front() << std::endl;
+	mstack.pop_front();
 	std::cout << "size " << mstack.size() << std::endl;
-	mstack.push(3);
-	mstack.push(5);
-	mstack.push(737);
+	mstack.push_back(3);
+	mstack.push_back(5);
+	mstack.push_back(737);
 	//[...]
-	mstack.push(0);
-	MutantStack<int>::iterator it = mstack.begin();
-	MutantStack<int>::iterator ite = mstack.end();
+	mstack.push_back(0);
+	std::list<int>::iterator it = mstack.begin();
+	std::list<int>::iterator ite = mstack.end();
 	std::cout << "end " << *ite << std::endl;
 	++it;
 	--it;
@@ -35,6 +36,6 @@ int main()
 		std::cout << "it is " << *it << std::endl;
 		++it;
 	}
-	std::stack<int> s(mstack);
+	std::list<int> s(mstack);
 	return 0;
 }

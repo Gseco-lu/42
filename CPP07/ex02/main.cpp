@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:18:39 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/24 17:05:50 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:32:45 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,16 +95,17 @@ public:
 
 int main(void)
 {
+    const Array<int> numbers5(5);
     Array<int> numbers(MAX_VAL);
     for (int i = 0; i < MAX_VAL; i++)
     {
         const int value = rand();
         numbers[i] = value;
     }
-
+    std::cout << numbers5[4] <<  std::endl;
     for (int i = 0; i < MAX_VAL; i++)
     {
-       std::cout << "I: " << i << " " << numbers[i] <<  std::endl;
+        std::cout << "I: " << i << " " << numbers[i] <<  std::endl;
     }
     Array<int> numbers3;
     try

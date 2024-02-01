@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:18:39 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/31 19:32:45 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:58:08 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@
 //        Array<int> tmp;
 //        tmp.operator=(numbers);
 //        Array<int> test(tmp);
-//
-//
-//    for (int i = 0; i < MAX_VAL; i++)
+//ain 0; i < MAX_VAL; i++)
 //    {
 //        if (mirror[i] != numbers[i])
 //        {
@@ -45,10 +43,7 @@
 //    {
 //        numbers[-2] = 0;
 //    }
-//    catch(const std::exception& e)
-//    {
-//        std::cerr << e.what() << '\n';
-//    }
+//    catch(const s# include <vector>
 //    try
 //    {
 //        numbers[MAX_VAL] = 0;
@@ -78,8 +73,6 @@
 //    return 0;
 //}
 
-#include <iostream>
-#include "Array.hpp"
 
 #define MAX_VAL 10
 

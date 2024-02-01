@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:17:20 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/31 18:27:19 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:51:45 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define ITER_HPP
 
 # include <iostream>
-# include <string>
 
 template< typename T >
 void print(const T& x )

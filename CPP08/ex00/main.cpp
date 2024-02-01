@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:21:34 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/12 14:21:35 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/02/01 20:58:00 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main()
 	std::cout << *it << std::endl;
 	try
 	{
-		std::cout << *easyfind(str, 'Z') << std::endl;
+		std::cout << *easyfind(str, 'P') << std::endl;
 	}
 	catch(const std::exception& e)
 	{

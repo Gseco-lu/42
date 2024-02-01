@@ -6,7 +6,7 @@
 /*   By: gseco-lu <gseco-lu@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:18:42 by gseco-lu          #+#    #+#             */
-/*   Updated: 2024/01/31 19:17:31 by gseco-lu         ###   ########.fr       */
+/*   Updated: 2024/02/01 14:52:21 by gseco-lu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,6 @@
 # define ARRAY_HPP
 
 # include <iostream>
-# include <string>
-# include <vector>
 
 template <typename T>
 class Array

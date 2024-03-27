@@ -11,10 +11,10 @@ create_data_directory:
     fi
 
 up: create_data_directory
-	@sudo docker compose -f $(FILE) up -d --build
+	@sudo docker-compose -f $(FILE) up -d --build
 
 clean:
-	@sudo docker compose -f $(FILE) down;
+	@sudo docker-compose -f $(FILE) down;
 
 fclean: clean
 	@sudo rm -rf $(MYSQL_DIR)

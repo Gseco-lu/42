@@ -1,25 +1,40 @@
-# -f: --file
-# -q: --quiet
-# -a: --all
-# $$: escape $ for shell
-all:
-	@mkdir -p $(HOME)/data/wordpress
-	@mkdir -p $(HOME)/data/mariadb
-	@docker-compose -f ./srcs/docker-compose.yml up
+FILE=$(PWD)/srcs/docker-compose.yml
+DATA_DIR=/home/$(USER)/data
+MYSQL_DIR=/home/$(USER)/data/mysql
+WORDPRESS_DIR=/home/$(USER)/data/wordpress
 
-down:
-	@docker-compose -f ./srcs/docker-compose.yml down
+all: up
 
-re:
-	@docker-compose -f srcs/docker-compose.yml up --build
+create_data_directory:
+	@if ! [ -d "/home/$(USER)/data/mysql" ] || ! [ -d "/home/$(USER)/data/wordpress" ]; then \
+        sudo mkdir -p $(MYSQL_DIR) $(WORDPRESS_DIR); \
+    fi
+
+up: create_data_directory
+	@sudo docker compose -f $(FILE) up -d --build
 
 clean:
-	@docker stop $$(docker ps -qa);\
-	docker rm $$(docker ps -qa);\
-	docker rmi -f $$(docker images -qa);\
-	docker volume rm $$(docker volume ls -q);\
-	docker network rm $$(docker network ls -q);\
-	rm -rf $(HOME)/data/wordpress
-	rm -rf $(HOME)/data/mariadb
+	@sudo docker compose -f $(FILE) down;
 
-.PHONY: all re down clean
+fclean: clean
+	@sudo rm -rf $(MYSQL_DIR)
+	@sudo rm -rf $(WORDPRESS_DIR)
+	@if [ "$$(docker volume ls -q)" ]; then \
+		sudo docker volume rm -f mariadb_data wordpress_data; \
+	fi
+	@sudo docker system prune -fa
+
+re: fclean all
+
+start_eval:
+	@if [ "$$(docker ps -qa)" ]; then \
+		sudo docker stop $$(docker ps -qa) && docker rm $$(docker ps -qa); \
+	fi
+	@if [ "$$(docker images -qa)" ]; then \
+		sudo docker rmi $$(docker images -qa); \
+	fi
+	@if [ "$$(docker volume ls -q)" ]; then \
+		sudo docker volume rm $$(docker volume ls -q); \
+	fi
+
+# docker network rm $(docker network ls -q) 2>/dev/null
